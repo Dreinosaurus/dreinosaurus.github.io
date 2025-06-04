@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christopher Andrei A. Escalante - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#8A2BE2", secondary: "#00E5FF" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      :root {
+      --bg-primary: #0B0F1F;
+      --bg-secondary: #080b16;
+      --bg-card: rgba(255, 255, 255, 0.05);
+      --bg-card-hover: rgba(255, 255, 255, 0.08);
+      --text-primary: #fff;
+      --text-secondary: #8A2BE2;
+      --text-gray: #9ca3af;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --nav-bg: #0a0d19;
+      --icon-bg: #121830;
+      --modal-bg: #0B0F1F;
+      --skill-icon-border: rgba(255, 255, 255, 0.1);
+      --button-hover-shadow: rgba(0, 229, 255, 0.5);
+      }
+      :root[data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f1f5f9;
+      --text-primary: #18181b;
+      --text-secondary: #8A2BE2;
+      --text-gray: #374151;
+      --border-color: #e5e7eb;
+      --nav-bg: #ffffff;
+      --icon-bg: #f3f4f6;
+      --modal-bg: #ffffff;
+      --skill-icon-border: #e5e7eb;
+      --button-hover-shadow: rgba(138, 43, 226, 0.15);
+      }
+      body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      }
+      body[data-theme="light"] {
+        background: var(--bg-primary) !important;
+        color: var(--text-primary) !important;
+      }
+      h1, h2, h3, h4, h5, h6, .font-bold, .font-semibold {
+        color: var(--text-primary) !important;
+      }
+      .text-secondary {
+        color: var(--text-secondary) !important;
+      }
+      .text-gray-400, .text-gray-300, .text-gray-600, .text-gray-900 {
+        color: var(--text-gray) !important;
+      }
+      .project-card {
+        background: var(--bg-card);
+        color: var(--text-primary) !important;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.08);
+        border-radius: 20px;
+        backdrop-filter: blur(8px);
+      }
+      .project-card:hover {
+        background: var(--bg-card-hover);
+        box-shadow: 0 8px 32px 0 rgba(138, 43, 226, 0.10);
+        border: 1px solid var(--text-secondary);
+      }
+      .nav-item {
+        color: var(--text-gray) !important;
+        background: var(--nav-bg);
+      }
+      .nav-item:hover {
+        color: var(--text-secondary) !important;
+        background: #ede9fe;
+        border-radius: 12px;
+        transform: translateX(5px);
+      }
+      .skill-tag {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1.5px solid rgba(138, 43, 226, 0.35);
+        color: #fff;
+        box-shadow: 0 0 5px 0 rgba(138,43,226,0.13), 0 0 0 1.5px rgba(62,224,224,0.08);
+        transition: all 0.35s cubic-bezier(.4,0,.2,1), box-shadow 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+      }
+      .skill-tag::before {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        border-radius: 9999px;
+        z-index: -1;
+        background: radial-gradient(circle at 60% 40%, rgba(138,43,226,0.13) 0%, rgba(62,224,224,0.08) 100%);
+        opacity: 0.7;
+        pointer-events: none;
+        transition: opacity 0.35s cubic-bezier(.4,0,.2,1);
+      }
+      .skill-tag:hover, .skill-tag:focus {
+        box-shadow: 0 0 10px 1.5px #8A2BE2, 0 0 14px 3px #3ee0e0;
+        border-color: #8A2BE2;
+        color: #fff;
+        transform: scale(1.08);
+      }
+      .skill-tag:hover::before, .skill-tag:focus::before {
+        opacity: 1;
+        background: radial-gradient(circle at 50% 50%, rgba(138,43,226,0.22) 0%, rgba(62,224,224,0.13) 100%);
+        filter: blur(1px) brightness(1.15);
+      }
+      .skill-icon > div {
+        background: var(--icon-bg);
+        border: 1.5px solid var(--text-secondary);
+      }
+      .skill-icon {
+        transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s cubic-bezier(.4,0,.2,1), filter 0.3s cubic-bezier(.4,0,.2,1);
+      }
+      .skill-icon:hover {
+        transform: scale(1.06);
+      }
+      .skill-icon:hover > div {
+        box-shadow: 0 0 18px 0 var(--text-secondary), 0 0 8px 2px rgba(138,43,226,0.15);
+        filter: brightness(1.08) saturate(1.1);
+      }
+      input, textarea {
+      background: #f3f4f6;
+      color: var(--text-primary);
+      border: 1.5px solid var(--text-secondary);
+      }
+      input:focus, textarea:focus {
+        border-color: #6366f1;
+        box-shadow: 0 0 0 2px #6366f144;
+      }
+      .social-icon {
+        color: var(--text-primary) !important;
+      }
+      .social-icon:hover {
+        color: var(--text-secondary) !important;
+        background: #ede9fe;
+        border-radius: 50%;
+      }
+      .btn-primary {
+        background: linear-gradient(90deg, var(--text-secondary) 0%, #6366f1 100%);
+        color: #fff !important;
+        border: none;
+        box-shadow: 0 2px 8px var(--button-hover-shadow);
+      }
+      .btn-primary:hover {
+        background: linear-gradient(90deg, #6366f1 0%, var(--text-secondary) 100%);
+        box-shadow: 0 0 20px var(--button-hover-shadow);
+      }
+      .btn-outline {
+        border: 1.5px solid var(--text-secondary);
+        color: var(--text-secondary) !important;
+        background: transparent;
+      }
+      .btn-outline:hover {
+        background: #ede9fe;
+        color: var(--text-secondary) !important;
+        box-shadow: 0 0 10px var(--button-hover-shadow);
+      }
+      .border-gray-800 {
+        border-color: var(--border-color) !important;
+      }
+      .bg-white {
+        background: var(--bg-card) !important;
+      }
+      .text-white {
+        color: var(--text-primary) !important;
+      }
+      /* Animate all transitions smoothly */
+      * {
+        transition: background 0.4s cubic-bezier(.4,0,.2,1),
+                    background-color 0.4s cubic-bezier(.4,0,.2,1),
+                    color 0.4s cubic-bezier(.4,0,.2,1),
+                    border-color 0.4s cubic-bezier(.4,0,.2,1),
+                    box-shadow 0.4s cubic-bezier(.4,0,.2,1),
+                    transform 0.4s cubic-bezier(.4,0,.2,1);
+      }
+      /* Contact Info: force white text for headings and details in Contact section */
+      #contact .contact-info-title,
+      #contact .contact-info-detail {
+        color: #fff !important;
+      }
+      /* Ensure icons remain secondary color */
+      #contact .contact-info-icon {
+        color: var(--text-secondary) !important;
+      }
+      /* Contact Info in Contact Me section: always white text, regardless of theme */
+      #contact .contact-info h3,
+      #contact .contact-info p {
+        color: #fff !important;
+      }
+      #contact .contact-info .text-secondary {
+        color: var(--text-secondary) !important;
+      }
+      #contact .contact-info .text-gray-400 {
+        color: #fff !important;
+      }
+      #contact .contact-info .text-gray-300 {
+        color: #fff !important;
+      }
+      #contact .contact-info .text-gray-600 {
+        color: #fff !important;
+      }
+      #contact .contact-info .text-gray-900 {
+        color: #fff !important;
+      }
+      /* Contact Me form fields: always black text for input and textarea */
+      #contact input,
+      #contact textarea {
+        color: #000 !important;
+      }
+      #navIcons {
+        display: none;
+        opacity: 0;
+        transform: translateY(-30px) scaleY(0.95);
+        pointer-events: none;
+        transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);
+      }
+      #navIcons.open {
+        display: flex !important;
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+        pointer-events: auto;
+      }
+      /* --- Enhanced Nav Icon Dropdown Animation --- */
+      @keyframes dropBounce {
+        0% {
+          opacity: 0;
+          transform: translateY(-40px) scale(0.95);
+        }
+        60% {
+          opacity: 1;
+          transform: translateY(8px) scale(1.05);
+        }
+        80% {
+          transform: translateY(-4px) scale(0.98);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+      /* --- Water Flow Drop Down Animation for Nav Icons --- */
+      @keyframes navIconWaterFlow {
+        0% {
+          opacity: 0;
+          transform: translateY(-40px) skewY(-8deg) scaleY(0.95);
+          filter: blur(4px);
+        }
+        60% {
+          opacity: 1;
+          transform: translateY(10px) skewY(2deg) scaleY(1.03);
+          filter: blur(1.5px);
+        }
+        80% {
+          transform: translateY(-2px) skewY(-1deg) scaleY(0.99);
+          filter: blur(0.5px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) skewY(0deg) scaleY(1);
+          filter: blur(0);
+        }
+      }
+      #navIcons .nav-item {
+        opacity: 0;
+        transform: translateY(-24px);
+        transition: none;
+      }
+      #navIcons.open .nav-item {
+        opacity: 1;
+        transform: translateY(0);
+        animation: navIconWaterFlow 0.55s cubic-bezier(.32,1.56,.64,1) both;
+      }
+      #navIcons.open .nav-item:nth-child(1) { animation-delay: 0.08s; }
+      #navIcons.open .nav-item:nth-child(2) { animation-delay: 0.16s; }
+      #navIcons.open .nav-item:nth-child(3) { animation-delay: 0.24s; }
+      #navIcons.open .nav-item:nth-child(4) { animation-delay: 0.32s; }
+      #navIcons.open .nav-item:nth-child(5) { animation-delay: 0.40s; }
+      #navIcons .nav-item { animation: none; }
+      #menuToggle span {
+        transition: all 0.35s cubic-bezier(.4,0,.2,1);
+      }
+      #menuToggle.open span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 20px;
+      }
+      #menuToggle.open span:nth-child(2) {
+        opacity: 0;
+      }
+      #menuToggle.open span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 20px;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 left-0 h-full w-16 md:w-20 bg-[#0a0d19] flex flex-col items-center py-6 z-50 border-r border-gray-800"
+    >
+      <div class="mb-4 text-primary font-['Pacifico'] text-xl">
+        <span style="display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; background: #18192b; border-radius: 18px;">
+          <img src="resources/CAE Logo no bg.png" alt="CAE Logo" class="mx-auto" style="width: 54px; height: 54px; min-width: 54px; min-height: 54px; max-width: 100%; max-height: 100%; object-fit: contain;" />
+        </span>
+      </div>
+      <!-- Menu Button -->
+      <button id="menuToggle" aria-label="Toggle menu" class="mb-8 focus:outline-none group relative w-10 h-10 flex items-center justify-center sm:w-12 sm:h-12">
+        <span class="block absolute h-0.5 w-7 bg-primary rounded transition-all duration-300 ease-in-out top-3 left-1.5"></span>
+        <span class="block absolute h-0.5 w-7 bg-primary rounded transition-all duration-300 ease-in-out top-5 left-1.5"></span>
+        <span class="block absolute h-0.5 w-7 bg-primary rounded transition-all duration-300 ease-in-out top-7 left-1.5"></span>
+      </button>
+      <div id="navIcons" class="flex flex-col items-center space-y-8 flex-grow">
+        <a
+          href="#home"
+          class="nav-item w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary"
+        >
+          <i class="ri-home-5-line ri-lg"></i>
+        </a>
+        <a
+          href="#about"
+          class="nav-item w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary"
+        >
+          <i class="ri-user-line ri-lg"></i>
+        </a>
+        <a
+          href="#projects"
+          class="nav-item w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary"
+        >
+          <i class="ri-folder-line ri-lg"></i>
+        </a>
+        <a
+          href="#skills"
+          class="nav-item w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary"
+        >
+          <i class="ri-tools-line ri-lg"></i>
+        </a>
+        <a
+          href="#contact"
+          class="nav-item w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary"
+        >
+          <i class="ri-mail-line ri-lg"></i>
+        </a>
+      </div>
+      <div class="mt-auto flex flex-col items-center space-y-4">
+        <!-- Theme toggle removed -->
+      </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="ml-16 md:ml-20">
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="min-h-screen flex items-center px-6 md:px-16 py-20"
+      >
+        <div class="max-w-7xl mx-auto w-full">
+          <div
+            class="flex flex-col md:flex-row items-center justify-between gap-10"
+          >
+            <div class="md:w-3/5">
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                Hi, I'm Christopher Andrei A. Escalante
+              </h1>
+              <p class="text-secondary text-lg md:text-xl mb-6">
+                A 3rd Year BSIT Student & Aspiring Web Developer + UI/UX
+                Designer
+              </p>
+              <p class="text-gray-400 italic mb-8">
+                "Designing websites that inspire and empower."
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a
+                  href="#projects"
+                  class="btn-primary px-6 py-3 rounded-button text-white font-medium whitespace-nowrap"
+                  >View Projects</a
+                >
+                <a
+                  href="#contact"
+                  class="btn-outline px-6 py-3 rounded-button text-secondary font-medium whitespace-nowrap"
+                  >Contact Me</a
+                >
+              </div>
+            </div>
+            <div class="md:w-2/5 flex justify-center">
+              <div class="relative flex items-center justify-center hero-hover-effect" style="width: 340px; height: 340px;">
+                <!-- Outer gradient ring -->
+                <span class="absolute rounded-full" style="width: 340px; height: 340px; border: 3px solid #3ee0e0; box-shadow: 0 0 16px 0 #3ee0e0, 0 0 0 8px rgba(62,224,224,0.08);"></span>
+                <!-- Profile image with inner border -->
+                <span class="absolute rounded-full" style="width: 240px; height: 240px; border: 3px solid #8A2BE2; box-shadow: 0 0 10px 0 #8A2BE2, 0 0 0 8px rgba(138,43,226,0.08); z-index: 2;"></span>
+                <img
+                  src="resources/Profile Photo.jpg"
+                  alt="Christopher Andrei A. Escalante"
+                  class="rounded-full object-cover object-top"
+                  style="width: 220px; height: 220px; z-index: 3; position: relative;"
+                />
+                <!-- Accent purple circle -->
+                <span class="absolute rounded-full bg-[#6d28d9] opacity-90" style="width: 100px; height: 100px; left: 200px; bottom: 18px; z-index: 1; border: 3px solid #8A2BE2;"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About Me Section -->
+      <section id="about" class="py-20 px-6 md:px-16">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-secondary">About Me</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <p class="text-gray-300 leading-relaxed mb-6">
+                I am a passionate student at STI College Puerto Princesa,
+                currently in my 3rd year of BSIT. My journey in tech has been
+                driven by a deep interest in creating intuitive and visually
+                appealing web solutions that solve real problems.
+              </p>
+              <p class="text-gray-300 leading-relaxed mb-6">
+                With a strong foundation in both front-end development and UI/UX
+                design principles, I strive to bridge the gap between
+                functionality and aesthetics to deliver exceptional digital
+                experiences.
+              </p>
+              <div class="flex space-x-4 mt-8">
+                <a
+                  href="https://github.com/Dreinosaurus"
+                  target="_blank"
+                  class="social-icon text-gray-400 hover:text-secondary"
+                >
+                  <div class="w-10 h-10 flex items-center justify-center">
+                    <i class="ri-github-fill ri-lg"></i>
+                  </div>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/christopher-andrei-escalante-a71020360"
+                  target="_blank"
+                  class="social-icon text-gray-400 hover:text-secondary"
+                >
+                  <div class="w-10 h-10 flex items-center justify-center">
+                    <i class="ri-linkedin-fill ri-lg"></i>
+                  </div>
+                </a>
+                <a
+                  href="https://www.facebook.com/Dreinosaurx/"
+                  target="_blank"
+                  class="social-icon text-gray-400 hover:text-secondary"
+                >
+                  <div class="w-10 h-10 flex items-center justify-center">
+                    <i class="ri-facebook-fill ri-lg"></i>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-6 text-white">
+                Skills & Tools
+              </h3>
+              <div class="flex flex-wrap gap-3">
+                <span
+                  class="skill-tag px-4 py-2 rounded-full text-sm text-gray-300"
+                  >Java</span
+                >
+                <span
+                  class="skill-tag px-4 py-2 rounded-full text-sm text-gray-300"
+                  >C#</span
+                >
+                <span
+                  class="skill-tag px-4 py-2 rounded-full text-sm text-gray-300"
+                  >HTML</span
+                >
+                <span
+                  class="skill-tag px-4 py-2 rounded-full text-sm text-gray-300"
+                  >CSS</span
+                >
+                <span
+                  class="skill-tag px-4 py-2 rounded-full text-sm text-gray-300"
+                  >JavaScript</span
+                >
+                <span
+                  class="skill-tag px-4 py-2 rounded-full text-sm text-gray-300"
+                  >Python</span
+                >
+                <span
+                  class="skill-tag px-4 py-2 rounded-full text-sm text-gray-300"
+                  >Figma</span
+                >
+                <span
+                  class="skill-tag px-4 py-2 rounded-full text-sm text-gray-300"
+                  >Canva</span
+                >
+                <span
+                  class="skill-tag px-4 py-2 rounded-full text-sm text-gray-300"
+                  >GitHub</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Projects Section -->
+      <section id="projects" class="py-20 px-6 md:px-16 bg-[#080b16]">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-secondary">Projects</h2>
+          <div
+            id="projectModal"
+            class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50"
+          >
+            <div class="rounded-xl p-6 max-w-xs w-full mx-4 border-2 border-secondary shadow-2xl flex flex-col items-center animate-fadeInUp" style="background-color: var(--modal-bg); min-width: 260px; min-height: 220px;">
+              <div class="text-center">
+                <i class="ri-time-line text-secondary text-3xl mb-2"></i>
+                <h3 class="text-white text-lg font-bold mb-1">Coming Soon!</h3>
+                <p class="text-gray-400 mb-4 text-base">This feature is currently under development.<br>Stay tuned for updates!</p>
+                <button
+                  onclick="closeProjectModal()"
+                  class="btn-primary px-5 py-2 rounded-button text-white font-semibold text-base hover:shadow-[0_0_12px_rgba(0,229,255,0.5)] transition-all duration-300"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Featured Project -->
+          <div class="project-card rounded-lg overflow-hidden mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="md:col-span-1">
+                <img
+                  src="resources/DTC Cover.png"
+                  alt="Digital Transformation Center"
+                  class="w-full h-full object-cover object-top rounded-lg"
+                />
+              </div>
+              <div class="md:col-span-2 p-6">
+                <h3 class="text-2xl font-bold mb-2 text-white">
+                  Digital Transformation Center - Palawan
+                </h3>
+                <p class="text-gray-400 text-sm mb-2">Web UI/UX Design</p>
+                <p class="text-gray-300 mb-6">
+                  Digital Transformation Center - Palawan QR Code-based Client Monitoring System, proposed a comprehensive solution designed to improve and optimize the client management procedures at the Digital Transformation Center (DTC) in Puerto Princesa, Palawan.
+                </p>
+                <button
+                  onclick="showProjectModal()"
+                  class="btn-primary inline-block px-5 py-2 rounded-button text-white text-sm font-medium whitespace-nowrap hover:shadow-[0_0_15px_rgba(0,229,255,0.5)] active:scale-95 transition-all duration-300"
+                >View Case Study</button>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Project 1 -->
+            <div class="project-card rounded-lg overflow-hidden">
+              <img
+                src="resources/Web Portfolio Cover.png"
+                alt="Portfolio Website"
+                class="w-full h-48 object-cover object-top"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Portfolio Website</h3>
+                <p class="text-gray-400 text-sm mb-2">Personal Project</p>
+                <p class="text-gray-300 mb-4 text-sm">
+                  A responsive personal portfolio website showcasing my skills,
+                  projects, and professional journey.
+                </p>
+                <button
+                  onclick="showProjectModal()"
+                  class="text-secondary text-sm font-medium hover:underline hover:shadow-[0_0_15px_rgba(0,229,255,0.5)] active:scale-95 transition-all duration-300"
+                >View More</button>
+              </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card rounded-lg overflow-hidden">
+              <img
+                src="resources/Task manager Mobile app UI Cover.png"
+                alt="Task Manager UI"
+                class="w-full h-48 object-cover object-top"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Task Manager UI</h3>
+                <p class="text-gray-400 text-sm mb-2">Mobile Application</p>
+                <p class="text-gray-300 mb-4 text-sm">
+                  A clean and intuitive task management interface with
+                  drag-and-drop functionality and team collaboration features.
+                </p>
+                <button
+                  onclick="showProjectModal()"
+                  class="text-secondary text-sm font-medium hover:underline hover:shadow-[0_0_15px_rgba(0,229,255,0.5)] active:scale-95 transition-all duration-300"
+                >View More</button>
+              </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card rounded-lg overflow-hidden">
+              <img
+                src="resources/Gaid Gadgets Cover.png"
+                alt="Landing Page Concept"
+                class="w-full h-48 object-cover object-top"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Landing Page Concept</h3>
+                <p class="text-gray-400 text-sm mb-2">UI/UX Design</p>
+                <p class="text-gray-300 mb-4 text-sm">
+                  A modern landing page design for a tech startup with
+                  animations and responsive elements.
+                </p>
+                <button
+                  onclick="showProjectModal()"
+                  class="text-secondary text-sm font-medium hover:underline hover:shadow-[0_0_15px_rgba(0,229,255,0.5)] active:scale-95 transition-all duration-300"
+                >View More</button>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-end mt-8">
+            <button
+              onclick="showProjectModal()"
+              class="btn-outline px-6 py-3 rounded-button text-secondary font-medium whitespace-nowrap"
+            >
+              View All Projects
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Certificates Section -->
+      <section id="certificates" class="py-20 px-6 md:px-16">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-secondary">Certificates</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Certificate 1 -->
+            <div class="project-card rounded-lg overflow-hidden">
+              <img
+                src="resources/Certificates/ui ux.png"
+                alt="UI/UX Design Certificate"
+                class="w-full h-48 object-cover object-top"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">
+                  UI/UX Design Fundamentals
+                </h3>
+                <p class="text-gray-400 text-sm mb-2">Coursera</p>
+                <p class="text-gray-300 mb-4 text-sm">
+                  Comprehensive course covering user interface design principles
+                  and user experience best practices.
+                </p>
+                <a
+                  href="https://coursera.org"
+                  target="_blank"
+                  class="btn-primary inline-block px-4 py-2 rounded-button text-white text-sm font-medium whitespace-nowrap"
+                  >View Certificate</a
+                >
+              </div>
+            </div>
+            <!-- Certificate 2 -->
+            <div class="project-card rounded-lg overflow-hidden">
+              <img
+                src="resources/Certificates/web dev.png"
+                class="w-full h-48 object-cover object-top"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">
+                  Front-End Web Development
+                </h3>
+                <p class="text-gray-400 text-sm mb-2">Udemy</p>
+                <p class="text-gray-300 mb-4 text-sm">
+                  Advanced web development techniques focusing on responsive
+                  design and modern JavaScript.
+                </p>
+                <a
+                  href="https://udemy.com"
+                  target="_blank"
+                  class="btn-primary inline-block px-4 py-2 rounded-button text-white text-sm font-medium whitespace-nowrap"
+                  >View Certificate</a
+                >
+              </div>
+            </div>
+            <!-- Certificate 3 -->
+            <div class="project-card rounded-lg overflow-hidden">
+              <img
+                src="resources/Certificates/Design thinking.png"
+                alt="Design Thinking Certificate"
+                class="w-full h-48 object-cover object-top"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">
+                  Design Thinking & Innovation
+                </h3>
+                <p class="text-gray-400 text-sm mb-2">Google</p>
+                <p class="text-gray-300 mb-4 text-sm">
+                  Strategic approach to design thinking, problem-solving, and
+                  digital innovation.
+                </p>
+                <a
+                  href="https://google.com"
+                  target="_blank"
+                  class="btn-primary inline-block px-4 py-2 rounded-button text-white text-sm font-medium whitespace-nowrap"
+                  >View Certificate</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Services Section -->
+      <section id="services" class="py-20 px-6 md:px-16 bg-[#080b16]">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-secondary">Services</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- UI/UX Design Service -->
+            <div class="project-card rounded-lg p-8">
+              <div
+                class="w-16 h-16 flex items-center justify-center bg-[#121830] rounded-lg mb-6"
+              >
+                <i class="ri-palette-fill ri-2x text-secondary"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-4">UI/UX Design</h3>
+              <ul class="space-y-3 text-gray-300 mb-6">
+                <li class="flex items-center">
+                  <i class="ri-checkbox-circle-line text-secondary mr-2"></i>
+                  User-centered design approach
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-checkbox-circle-line text-secondary mr-2"></i>
+                  Wireframing and prototyping
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-checkbox-circle-line text-secondary mr-2"></i>
+                  Figma and Canva expertise
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-checkbox-circle-line text-secondary mr-2"></i>
+                  Interactive design solutions
+                </li>
+              </ul>
+              <a
+                href="#contact"
+                class="btn-primary inline-block px-6 py-3 rounded-button text-white font-medium whitespace-nowrap"
+                >Get Started</a
+              >
+            </div>
+            <!-- Front-End Development Service -->
+            <div class="project-card rounded-lg p-8">
+              <div
+                class="w-16 h-16 flex items-center justify-center bg-[#121830] rounded-lg mb-6"
+              >
+                <i class="ri-code-s-slash-fill ri-2x text-secondary"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-4">Front-End Development</h3>
+              <ul class="space-y-3 text-gray-300 mb-6">
+                <li class="flex items-center">
+                  <i class="ri-checkbox-circle-line text-secondary mr-2"></i>
+                  Responsive web development
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-checkbox-circle-line text-secondary mr-2"></i>
+                  Clean, maintainable code
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-checkbox-circle-line text-secondary mr-2"></i>
+                  Modern HTML/CSS/JavaScript
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-checkbox-circle-line text-secondary mr-2"></i>
+                  Performance optimization
+                </li>
+              </ul>
+              <a
+                href="#contact"
+                class="btn-primary inline-block px-6 py-3 rounded-button text-white font-medium whitespace-nowrap"
+                >Get Started</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Skills Section -->
+      <section id="skills" class="py-20 px-6 md:px-16">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-secondary">Skills</h2>
+          <div
+            class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-8 justify-items-center"
+          >
+            <div class="skill-icon flex flex-col items-center">
+              <div
+                class="w-16 h-16 flex items-center justify-center rounded-lg mb-2"
+                style="background-color: var(--icon-bg);"
+              >
+                <i class="ri-html5-fill ri-2x text-[#E34F26]"></i>
+              </div>
+              <span class="text-sm text-gray-400">HTML</span>
+            </div>
+            <div class="skill-icon flex flex-col items-center">
+              <div
+                class="w-16 h-16 flex items-center justify-center rounded-lg mb-2"
+                style="background-color: var(--icon-bg);"
+              >
+                <i class="ri-css3-fill ri-2x text-[#1572B6]"></i>
+              </div>
+              <span class="text-sm text-gray-400">CSS</span>
+            </div>
+            <div class="skill-icon flex flex-col items-center">
+              <div
+                class="w-16 h-16 flex items-center justify-center rounded-lg mb-2"
+                style="background-color: var(--icon-bg);"
+              >
+                <i class="ri-javascript-fill ri-2x text-[#F7DF1E]"></i>
+              </div>
+              <span class="text-sm text-gray-400">JavaScript</span>
+            </div>
+            <div class="skill-icon flex flex-col items-center">
+              <div
+                class="w-16 h-16 flex items-center justify-center rounded-lg mb-2"
+                style="background-color: var(--icon-bg);"
+              >
+                <i class="ri-reactjs-line ri-2x text-[#61DAFB]"></i>
+              </div>
+              <span class="text-sm text-gray-400">React</span>
+            </div>
+            <div class="skill-icon flex flex-col items-center">
+              <div
+                class="w-16 h-16 flex items-center justify-center rounded-lg mb-2"
+                style="background-color: var(--icon-bg);"
+              >
+                <i class="ri-github-fill ri-2x text-white"></i>
+              </div>
+              <span class="text-sm text-gray-400">GitHub</span>
+            </div>
+            <div class="skill-icon flex flex-col items-center">
+              <div
+                class="w-16 h-16 flex items-center justify-center rounded-lg mb-2"
+                style="background-color: var(--icon-bg);"
+              >
+                <i class="ri-terminal-box-fill ri-2x text-[#3776AB]"></i>
+              </div>
+              <span class="text-sm text-gray-400">Python</span>
+            </div>
+            <div class="skill-icon flex flex-col items-center">
+              <div
+                class="w-16 h-16 flex items-center justify-center rounded-lg mb-2"
+                style="background-color: var(--icon-bg);"
+              >
+                <i class="ri-database-2-fill ri-2x text-[#4479A1]"></i>
+              </div>
+              <span class="text-sm text-gray-400">SQL</span>
+            </div>
+            <div class="skill-icon flex flex-col items-center">
+              <div
+                class="w-16 h-16 flex items-center justify-center rounded-lg mb-2"
+                style="background-color: var(--icon-bg);"
+              >
+                <i class="ri-palette-fill ri-2x text-[#F24E1E]"></i>
+              </div>
+              <span class="text-sm text-gray-400">Figma</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 px-6 md:px-16 bg-[#080b16]">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-secondary">Contact Me</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <form id="contactForm">
+                <div class="mb-6">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                    class="w-full px-4 py-3 rounded-lg border-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+                <div class="mb-6">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Your Email"
+                    required
+                    class="w-full px-4 py-3 rounded-lg border-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+                <div class="mb-6">
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Your Message"
+                    required
+                    maxlength="10000"
+                    class="w-full px-4 py-3 rounded-lg border-none focus:ring-2 focus:ring-primary"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="btn-primary px-6 py-3 rounded-button text-white font-medium whitespace-nowrap"
+                >
+                  Send Message
+                </button>
+              </form>
+              <div
+                id="messageModal"
+                class="fixed inset-0 bg-black bg-opacity-70 hidden flex items-center justify-center z-50"
+              >
+                <div class="bg-[#232226] rounded-xl p-6 max-w-xs w-full mx-4 shadow-2xl border-2 border-secondary flex flex-col items-center animate-fadeInUp" style="backdrop-filter: blur(2px); min-width: 260px; min-height: 220px;">
+                  <div class="text-center modal-content">
+                    <div class="flex justify-center mb-2">
+                      <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1a1a22] border-2 border-secondary shadow-lg">
+                        <i class="ri-checkbox-circle-fill text-secondary text-3xl"></i>
+                      </span>
+                    </div>
+                    <h3 class="text-white text-lg font-bold mb-1">Message Sent!</h3>
+                    <p class="text-gray-100 mb-4 text-base font-medium">Thank you for your message.<br>I'll get back to you soon. 🚀</p>
+                    <button
+                      onclick="closeModal()"
+                      class="btn-primary px-5 py-2 rounded-button text-white font-semibold text-base shadow-md hover:shadow-[0_0_12px_rgba(162,89,255,0.5)] transition-all duration-300"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-start mb-6">
+                <div
+                  class="w-10 h-10 flex items-center justify-center text-secondary mr-4"
+                >
+                  <i class="ri-phone-fill ri-lg"></i>
+                </div>
+                <div>
+                  <h3 class="text-white font-medium">Phone</h3>
+                  <p class="text-white">099422151617</p>
+                </div>
+              </div>
+              <div class="flex items-start mb-6">
+                <div class="w-10 h-10 flex items-center justify-center text-secondary mr-4">
+                  <i class="ri-github-fill ri-lg"></i>
+                </div>
+                <div>
+                  <h3 class="text-white font-medium">GitHub</h3>
+                  <p class="text-white"><a href="https://github.com/Dreinosaurus" target="_blank" rel="noopener" class="text-white">https://github.com/Dreinosaurus</a></p>
+                </div>
+              </div>
+              <div class="flex items-start mb-6">
+                <div class="w-10 h-10 flex items-center justify-center text-secondary mr-4">
+                  <i class="ri-linkedin-fill ri-lg"></i>
+                </div>
+                <div>
+                  <h3 class="text-white font-medium">LinkedIn</h3>
+                  <p class="text-white"><a href="https://www.linkedin.com/in/christopher-andrei-escalante-a71020360" target="_blank" rel="noopener" class="text-white">www.linkedin.com/in/christopher-andrei-escalante-a71020360</a></p>
+                </div>
+              </div>
+              <div class="flex items-start mb-6">
+                <div class="w-10 h-10 flex items-center justify-center text-secondary mr-4">
+                  <i class="ri-mail-fill ri-lg"></i>
+                </div>
+                <div>
+                  <h3 class="text-white font-medium">Email</h3>
+                  <p class="text-white"><a href="mailto:escalante.christopherandrei@gmail.com" target="_blank" rel="noopener" class="text-white">escalante.christopherandrei@gmail.com</a></p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="w-10 h-10 flex items-center justify-center text-secondary mr-4">
+                  <i class="ri-facebook-fill ri-lg"></i>
+                </div>
+                <div>
+                  <h3 class="text-white font-medium">Facebook</h3>
+                  <p class="text-white"><a href="https://www.facebook.com/Dreinosaurx/" target="_blank" rel="noopener" class="text-white">https://www.facebook.com/Dreinosaurx/</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer class="py-8 px-6 md:px-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 mb-4 md:mb-0">
+              © 2025 Christopher Andrei A. Escalante. All rights reserved.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="https://github.com/Dreinosaurus"
+                target="_blank"
+                class="social-icon text-gray-400 hover:text-secondary"
+              >
+                <div class="w-8 h-8 flex items-center justify-center">
+                  <i class="ri-github-fill ri-lg"></i>
+                </div>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/christopher-andrei-escalante-a71020360"
+                target="_blank"
+                class="social-icon text-gray-400 hover:text-secondary"
+              >
+                <div class="w-8 h-8 flex items-center justify-center">
+                  <i class="ri-linkedin-fill ri-lg"></i>
+                </div>
+              </a>
+              <a
+                href="https://www.facebook.com/Dreinosaurx/"
+                target="_blank"
+                class="social-icon text-gray-400 hover:text-secondary"
+              >
+                <div class="w-8 h-8 flex items-center justify-center">
+                  <i class="ri-facebook-fill ri-lg"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+    <script id="smoothScrollScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+    <script id="modalHandlerScript">
+      function showProjectModal() {
+        const modal = document.getElementById("projectModal");
+        const modalContent = modal.querySelector("div");
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        setTimeout(() => {
+          modalContent.classList.remove("scale-95", "opacity-0");
+          modalContent.classList.add("scale-100", "opacity-100");
+        }, 10);
+      }
+      function closeProjectModal() {
+        const modal = document.getElementById("projectModal");
+        const modalContent = modal.querySelector("div");
+        modalContent.classList.remove("scale-100", "opacity-100");
+        modalContent.classList.add("scale-95", "opacity-0");
+        setTimeout(() => {
+          modal.classList.remove("flex");
+          modal.classList.add("hidden");
+        }, 300);
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        const projectLinks = document.querySelectorAll(
+          'a[href="#"], a[href="https://youtube.com"]',
+        );
+        projectLinks.forEach((link) => {
+          if (
+            link.textContent.includes("View Case Study") ||
+            link.textContent.includes("View More") ||
+            link.textContent.includes("View All Projects")
+          ) {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+              showProjectModal();
+            });
+            link.classList.add(
+              "hover:shadow-[0_0_15px_rgba(0,229,255,0.5)]",
+              "active:scale-95",
+              "transition-all",
+              "duration-300",
+            );
+          }
+        });
+      });
+    </script>
+    <script id="menuToggleScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menuToggle");
+        const navIcons = document.getElementById("navIcons");
+        let open = false;
+        function setMenuState(state) {
+          open = state;
+          if (open) {
+            navIcons.classList.add("open");
+            menuToggle.classList.add("open");
+          } else {
+            navIcons.classList.remove("open");
+            menuToggle.classList.remove("open");
+          }
+        }
+        // Initial state: hide icons
+        setMenuState(false);
+        menuToggle.addEventListener("click", function () {
+          setMenuState(!open);
+        });
+      });
+    </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const contactForm = document.getElementById("contactForm");
+  const messageModal = document.getElementById("messageModal");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+      contactForm.reset();
+      if (messageModal) {
+        messageModal.classList.remove("hidden");
+        messageModal.classList.add("flex");
+        setTimeout(() => {
+          const closeBtn = messageModal.querySelector("button");
+          if (closeBtn) closeBtn.focus();
+        }, 100);
+      } else {
+        alert("Message sent! I'll get back to you soon. Thank you for reaching out!");
+      }
+    });
+  }
+});
+function closeModal() {
+  const messageModal = document.getElementById("messageModal");
+  if (messageModal) {
+    messageModal.classList.add("hidden");
+    messageModal.classList.remove("flex");
+  }
+}
+</script>
+  </body>
+</html>

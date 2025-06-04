@@ -1,0 +1,334 @@
+/* --- FORCE CONTACT ME SECTION TO ALWAYS BE DARK --- */
+#contact {
+  background: #0B0F1F !important;
+}
+
+/* Contact form input and textarea: force black text for user input in Contact section */
+#contact input,
+#contact textarea {
+  color: #000 !important;
+}
+
+/* Contact Me Section Card */
+#contact .contact-form-card {
+  background: #28272b;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 430px;
+  margin: 0 auto;
+}
+#contact .contact-form-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f3f3f3;
+  margin-bottom: 1.5rem;
+}
+#contact .contact-form-label {
+  color: #bdbdbd;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+#contact .contact-form-input,
+#contact .contact-form-textarea {
+  width: 100%;
+  background: #232226;
+  color: #000 !important;
+  border: 2px solid #8A2BE2;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+#contact .contact-form-input:focus,
+#contact .contact-form-textarea:focus {
+  border-color: #8A2BE2;
+  box-shadow: 0 0 0 2px #8A2BE244;
+}
+#contact .contact-form-button {
+  width: 100%;
+  background: #00bfcf;
+  color: #18181b;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 999px;
+  padding: 0.9rem 0;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 24px 0 rgba(0,191,207,0.18);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+#contact .contact-form-button:hover {
+  background: #00e5ff;
+  box-shadow: 0 6px 32px 0 rgba(0,229,255,0.22);
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* Force dark mode card and form styles regardless of theme */
+#contact .contact-form-card,
+#contact .contact-form-card h2,
+#contact .contact-form-label,
+#contact .contact-form-input,
+#contact .contact-form-textarea,
+#contact .contact-form-button {
+  background: #28272b !important;
+  color: #000 !important;
+  border-color: #8A2BE2 !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25) !important;
+}
+#contact .contact-form-card h2 {
+  color: #f3f3f3 !important;
+}
+#contact .contact-form-label {
+  color: #bdbdbd !important;
+}
+#contact .contact-form-input,
+#contact .contact-form-textarea {
+  background: #232226 !important;
+  color: #000 !important;
+  border: 2px solid #8A2BE2 !important;
+}
+#contact .contact-form-button {
+  background: #00bfcf !important;
+  color: #18181b !important;
+}
+#contact .contact-form-button:hover {
+  background: #00e5ff !important;
+}
+
+/* Contact info styles: force white text and purple icons */
+#contact .contact-info h3,
+#contact .contact-info p,
+#contact .contact-info a {
+  color: #fff !important;
+  opacity: 1 !important;
+  filter: none !important;
+  transition: none !important;
+}
+#contact .contact-info .text-gray-400,
+#contact .contact-info .text-gray-300,
+#contact .contact-info .text-gray-600,
+#contact .contact-info .text-gray-900 {
+  color: #fff !important;
+  opacity: 1 !important;
+  filter: none !important;
+  transition: none !important;
+}
+#contact .contact-info .text-secondary,
+#contact .contact-info i {
+  color: #8A2BE2 !important;
+  opacity: 1 !important;
+  filter: none !important;
+  transition: none !important;
+}
+
+/* Hero image hover effect */
+.hero-hover-effect {
+  transition: transform 0.7s cubic-bezier(.22,1.12,.36,1), box-shadow 0.5s cubic-bezier(.4,0,.2,1);
+  will-change: transform;
+  border-radius: 50%; /* Ensure the hover effect is circular */
+  overflow: hidden;   /* Prevent glow from leaking outside the circle */
+}
+.hero-hover-effect:hover {
+  transform: scale(1.08) translateY(-12px);
+  box-shadow: 0 0 48px 16px #3ee0e0cc, 0 0 32px 8px #8A2BE255; /* Add blur radius for a soft, circular glow */
+  z-index: 10;
+}
+
+/* Skill tag hover effect: removed rotation */
+.skill-tag:hover, .skill-tag:focus {
+        box-shadow: 0 0 10px 1.5px #8A2BE2, 0 0 14px 3px #3ee0e0;
+        border-color: #8A2BE2;
+        color: #fff;
+        transform: scale(1.08); /* Removed rotate(-2deg) for no tilt */
+      }
+
+/* Responsive Navigation Bar */
+nav {
+  width: 100vw;
+  max-width: 100vw;
+  height: 64px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  position: fixed;
+  z-index: 50;
+  border-right: none;
+  border-bottom: 1px solid #232226;
+  background: #0a0d19;
+  transition: height 0.3s;
+}
+@media (min-width: 768px) {
+  nav {
+    flex-direction: column;
+    width: 5rem;
+    max-width: 5rem;
+    height: 100vh;
+    border-bottom: none;
+    border-right: 1px solid #232226;
+    padding: 1.5rem 0;
+  }
+}
+
+/* Responsive Main Content */
+main {
+  margin-left: 0;
+  margin-top: 64px;
+  transition: margin 0.3s;
+}
+@media (min-width: 768px) {
+  main {
+    margin-left: 5rem;
+    margin-top: 0;
+  }
+}
+
+/* Responsive Hero Section */
+.hero-hover-effect {
+  width: 220px;
+  height: 220px;
+}
+@media (min-width: 640px) {
+  .hero-hover-effect {
+    width: 280px;
+    height: 280px;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-hover-effect {
+    width: 340px;
+    height: 340px;
+  }
+}
+
+/* Responsive Grid for Sections */
+.grid-cols-1 { grid-template-columns: 1fr; }
+@media (min-width: 768px) {
+  .md\:grid-cols-2 { grid-template-columns: 1fr 1fr; }
+  .md\:grid-cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .lg\:grid-cols-8 { grid-template-columns: repeat(8, 1fr); }
+}
+
+/* Responsive Padding and Font Sizes */
+section, footer {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 640px) {
+  section, footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  section, footer {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+h1 {
+  font-size: 2rem;
+}
+@media (min-width: 640px) {
+  h1 { font-size: 2.5rem; }
+}
+@media (min-width: 1024px) {
+  h1 { font-size: 3.5rem; }
+}
+
+/* Responsive Project and Certificate Cards */
+.project-card, .certificate-card {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Responsive Skill Tags and Icons */
+.skill-tag {
+  font-size: 0.9rem;
+  padding: 0.5rem 1.1rem;
+}
+@media (min-width: 640px) {
+  .skill-tag { font-size: 1rem; }
+}
+.skill-icon > div {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+@media (max-width: 400px) {
+  .skill-icon > div {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+/* Responsive Footer */
+footer .flex-col { flex-direction: column; }
+@media (min-width: 768px) {
+  footer .flex-col { flex-direction: row; }
+}
+
+/* Responsive Modal */
+#projectModal > div, #messageModal > div {
+  max-width: 320px !important;
+  min-width: 220px !important;
+  min-height: 220px !important;
+  padding: 2rem 1.5rem !important;
+  border-radius: 1.25rem !important;
+  box-sizing: border-box;
+  margin: 0 auto !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#messageModal .modal-content,
+#projectModal .modal-content {
+  width: 100%;
+  padding: 0;
+}
+#messageModal h3, #projectModal h3 {
+  font-size: 1.25rem !important;
+}
+#messageModal p, #projectModal p {
+  font-size: 1rem !important;
+}
+#messageModal button, #projectModal button {
+  font-size: 1rem !important;
+  min-width: 100px;
+}
+
+/* Hide nav bar on landscape mobile if needed */
+@media (max-width: 640px) and (orientation: landscape) {
+  nav { height: 56px; }
+  main { margin-top: 56px; }
+}
+
+:root {
+  --bg-primary: #0B0F1F;
+  --bg-secondary: #080b16;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  --text-primary: #fff;
+  --text-secondary: #8A2BE2;
+  --text-gray: #9ca3af;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --nav-bg: #0a0d19;
+  --icon-bg: #121830;
+  --modal-bg: #0B0F1F;
+  --skill-icon-border: rgba(255, 255, 255, 0.1);
+  --button-hover-shadow: rgba(0, 229, 255, 0.5);
+}
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+}
