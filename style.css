@@ -278,17 +278,20 @@ footer .flex-col { flex-direction: column; }
 
 /* Responsive Modal */
 #projectModal > div, #messageModal > div {
-  max-width: 320px !important;
-  min-width: 220px !important;
-  min-height: 220px !important;
-  padding: 2rem 1.5rem !important;
-  border-radius: 1.25rem !important;
-  box-sizing: border-box;
+  min-width: 0 !important;
+  max-width: 90vw !important;
+  width: 320px !important;
+  min-height: 0 !important;
+  max-height: 90vh !important;
+  height: auto !important;
   margin: 0 auto !important;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 1.5rem 1.2rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 18px !important;
+  box-sizing: border-box !important;
 }
 #messageModal .modal-content,
 #projectModal .modal-content {
@@ -448,14 +451,26 @@ body {
 
 /* Ensure modals and overlays are always centered and fit on small screens */
 #projectModal > div, #messageModal > div {
-  min-width: 90vw !important;
-  max-width: 98vw !important;
-  min-height: 160px !important;
-  padding: 1.2rem !important;
+  min-width: 0 !important;
+  max-width: 90vw !important;
+  width: 320px !important;
+  min-height: 0 !important;
+  max-height: 90vh !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  padding: 1.5rem 1.2rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 18px !important;
+  box-sizing: border-box !important;
 }
 @media (max-width: 480px) {
   #projectModal > div, #messageModal > div {
-    min-width: 98vw !important;
+    width: 95vw !important;
+    min-width: 0 !important;
+    max-width: 98vw !important;
     padding: 0.7rem !important;
   }
 }
