@@ -376,6 +376,60 @@ body {
   .skill-tag { font-size: 0.7em !important; padding: 0.2rem 0.7rem !important; }
 }
 
+/* --- Landscape Mobile (Tablet/iPad) --- */
+@media (max-width: 1024px) and (orientation: landscape) {
+  nav {
+    position: fixed !important;
+    left: 0; top: 0; bottom: 0; right: auto;
+    width: 56px !important;
+    height: 100vh !important;
+    flex-direction: column !important;
+    border-right: 1.5px solid var(--border-color) !important;
+    border-bottom: none !important;
+    padding: 1.2rem 0 !important;
+    z-index: 50;
+  }
+  main {
+    margin-left: 56px !important;
+    margin-top: 0 !important;
+  }
+  #navIcons {
+    flex-direction: column !important;
+    gap: 2rem !important;
+    position: static !important;
+    width: auto !important;
+    background: none !important;
+    border-bottom: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  #menuToggle {
+    margin-bottom: 2rem !important;
+  }
+}
+@media (max-width: 900px) and (orientation: landscape) {
+  .hero-hover-effect { width: 160px !important; height: 160px !important; }
+  .hero-hover-effect > span[style*="width: 340px"] { width: 160px !important; height: 160px !important; }
+  .hero-hover-effect > span[style*="width: 240px"] { width: 90px !important; height: 90px !important; }
+  .hero-hover-effect img { width: 80px !important; height: 80px !important; }
+  .hero-hover-effect > span[style*="width: 100px"] { width: 30px !important; height: 30px !important; left: 70px !important; bottom: 4px !important; }
+  h1, h2, h3 { font-size: 1.1em !important; }
+  .btn-primary, .btn-outline { font-size: 0.95em !important; }
+  .skill-tag { font-size: 0.8em !important; padding: 0.2rem 0.7rem !important; }
+  .skill-icon > div { width: 2rem !important; height: 2rem !important; }
+  .skill-icon span { font-size: 0.8em !important; }
+}
+@media (max-width: 900px) and (orientation: landscape) {
+  .grid-cols-1, .md\:grid-cols-2, .md\:grid-cols-3, .lg\:grid-cols-3, .lg\:grid-cols-8, .md\:grid-cols-6, .sm\:grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .flex-row, .md\:flex-row { flex-direction: row !important; }
+  .gap-10, .gap-12, .gap-8, .gap-6 { gap: 1rem !important; }
+}
+@media (max-width: 900px) and (orientation: landscape) {
+  section, .project-card, .max-w-7xl, .py-20, .px-6, .md\:px-16 { padding: 0.7rem !important; }
+}
+
 /* Responsive grid and flex fixes */
 @media (max-width: 1024px) {
   .grid-cols-1, .md\:grid-cols-2, .md\:grid-cols-3, .lg\:grid-cols-3, .lg\:grid-cols-8, .md\:grid-cols-6, .sm\:grid-cols-4 { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
