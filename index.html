@@ -513,7 +513,7 @@
         </div>
       </section>
       <!-- Projects Section -->
-      <section id="projects" class="py-20 px-6 md:px-16 bg-[#080b16]">
+      <section id="projects" class="py-20 px-4 sm:px-6 md:px-12 lg:px-16 bg-[#080b16]">
         <div class="max-w-7xl mx-auto">
           <h2 class="text-3xl font-bold mb-12 text-secondary">Projects</h2>
           <div
@@ -536,15 +536,16 @@
           </div>
           <!-- Featured Project -->
           <div class="project-card rounded-lg overflow-hidden mb-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div class="md:col-span-1">
+            <div class="flex flex-col md:flex-row gap-6">
+              <div class="md:w-1/3 w-full flex-shrink-0">
                 <img
                   src="resources/DTC Cover.png"
                   alt="Digital Transformation Center"
-                  class="w-full h-full object-cover object-top rounded-lg"
+                  class="w-full h-48 md:h-full object-cover object-top rounded-lg"
+                  style="min-height: 180px; max-height: 320px;"
                 />
               </div>
-              <div class="md:col-span-2 p-6">
+              <div class="md:w-2/3 w-full p-6 flex flex-col justify-center">
                 <h3 class="text-2xl font-bold mb-2 text-white">
                   Digital Transformation Center - Palawan
                 </h3>
@@ -559,64 +560,73 @@
               </div>
             </div>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Project 1 -->
-            <div class="project-card rounded-lg overflow-hidden">
+            <div class="project-card rounded-lg overflow-hidden flex flex-col h-full">
               <img
                 src="resources/Web Portfolio Cover.png"
                 alt="Portfolio Website"
                 class="w-full h-48 object-cover object-top"
+                style="min-height: 160px; max-height: 220px;"
               />
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Portfolio Website</h3>
-                <p class="text-gray-400 text-sm mb-2">Personal Project</p>
-                <p class="text-gray-300 mb-4 text-sm">
-                  A responsive personal portfolio website showcasing my skills,
-                  projects, and professional journey.
-                </p>
+              <div class="p-6 flex flex-col flex-1 justify-between">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Portfolio Website</h3>
+                  <p class="text-gray-400 text-sm mb-2">Personal Project</p>
+                  <p class="text-gray-300 mb-4 text-sm">
+                    A responsive personal portfolio website showcasing my skills,
+                    projects, and professional journey.
+                  </p>
+                </div>
                 <button
                   onclick="showProjectModal()"
-                  class="text-secondary text-sm font-medium hover:underline hover:shadow-[0_0_15px_rgba(0,229,255,0.5)] active:scale-95 transition-all duration-300"
+                  class="text-secondary text-sm font-medium hover:underline hover:shadow-[0_0_15px_rgba(0,229,255,0.5)] active:scale-95 transition-all duration-300 mt-auto"
                 >View More</button>
               </div>
             </div>
             <!-- Project 2 -->
-            <div class="project-card rounded-lg overflow-hidden">
+            <div class="project-card rounded-lg overflow-hidden flex flex-col h-full">
               <img
                 src="resources/Task manager Mobile app UI Cover.png"
                 alt="Task Manager UI"
                 class="w-full h-48 object-cover object-top"
+                style="min-height: 160px; max-height: 220px;"
               />
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Task Manager UI</h3>
-                <p class="text-gray-400 text-sm mb-2">Mobile Application</p>
-                <p class="text-gray-300 mb-4 text-sm">
-                  A clean and intuitive task management interface with
-                  drag-and-drop functionality and team collaboration features.
-                </p>
+              <div class="p-6 flex flex-col flex-1 justify-between">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Task Manager UI</h3>
+                  <p class="text-gray-400 text-sm mb-2">Mobile Application</p>
+                  <p class="text-gray-300 mb-4 text-sm">
+                    A clean and intuitive task management interface with
+                    drag-and-drop functionality and team collaboration features.
+                  </p>
+                </div>
                 <button
                   onclick="showProjectModal()"
-                  class="text-secondary text-sm font-medium hover:underline hover:shadow-[0_0_15px_rgba(0,229,255,0.5)] active:scale-95 transition-all duration-300"
+                  class="text-secondary text-sm font-medium hover:underline hover:shadow-[0_0_15px_rgba(0,229,255,0.5)] active:scale-95 transition-all duration-300 mt-auto"
                 >View More</button>
               </div>
             </div>
             <!-- Project 3 -->
-            <div class="project-card rounded-lg overflow-hidden">
+            <div class="project-card rounded-lg overflow-hidden flex flex-col h-full">
               <img
                 src="resources/Gaid Gadgets Cover.png"
                 alt="Landing Page Concept"
                 class="w-full h-48 object-cover object-top"
+                style="min-height: 160px; max-height: 220px;"
               />
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Landing Page Concept</h3>
-                <p class="text-gray-400 text-sm mb-2">UI/UX Design</p>
-                <p class="text-gray-300 mb-4 text-sm">
-                  A modern landing page design for a tech startup with
-                  animations and responsive elements.
-                </p>
+              <div class="p-6 flex flex-col flex-1 justify-between">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Landing Page Concept</h3>
+                  <p class="text-gray-400 text-sm mb-2">UI/UX Design</p>
+                  <p class="text-gray-300 mb-4 text-sm">
+                    A modern landing page design for a tech startup with
+                    animations and responsive elements.
+                  </p>
+                </div>
                 <button
                   onclick="showProjectModal()"
-                  class="text-secondary text-sm font-medium hover:underline hover:shadow-[0_0_15px_rgba(0,229,255,0.5)] active:scale-95 transition-all duration-300"
+                  class="text-secondary text-sm font-medium hover:underline hover:shadow-[0_0_15px_rgba(0,229,255,0.5)] active:scale-95 transition-all duration-300 mt-auto"
                 >View More</button>
               </div>
             </div>
@@ -1141,7 +1151,7 @@ function closeModal() {
 </script>
 <script>
 // Animated role switcher for hero section with fade effect
-const roles = ["Web Developer", "UI|UX Designer"];
+const roles = ["Web Developer", "UI | UX Designer"];
 let roleIndex = 0;
 const switchRole = document.getElementById("switchRole");
 if (switchRole) {
