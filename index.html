@@ -334,8 +334,8 @@
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 h-full w-16 bg-[#0a0d19] flex flex-col items-center py-6 z-50 border-r border-gray-800">
       <div class="mb-4 text-primary font-['Pacifico'] text-xl">
-        <span style="display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; background: #18192b; border-radius: 18px;">
-          <img src="resources/CAE Logo no bg.png" alt="CAE Logo" class="mx-auto" style="width: 54px; height: 54px; min-width: 54px; min-height: 54px; max-width: 100%; max-height: 100%; object-fit: contain;" />
+        <span style="display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; background: #232b33; border-radius: 18px;">
+          <img src="resources/Code CAE Logo.png" alt="CAE Logo" class="mx-auto" style="width: 54px; height: 54px; min-width: 54px; min-height: 54px; max-width: 100%; max-height: 100%; object-fit: contain; filter: brightness(0) invert(1) drop-shadow(0 0 8px #8A2BE2);" />
         </span>
       </div>
       <!-- Menu Button -->
@@ -1140,15 +1140,25 @@ function closeModal() {
 }
 </script>
 <script>
-// Animated role switcher for hero section
+// Animated role switcher for hero section with fade effect
 const roles = ["Web Developer", "UI|UX Designer"];
 let roleIndex = 0;
 const switchRole = document.getElementById("switchRole");
 if (switchRole) {
+  switchRole.style.transition = "opacity 0.5s";
+  let fadeDuration = 500; // ms
+  let interval = 2000; // ms
   setInterval(() => {
-    roleIndex = (roleIndex + 1) % roles.length;
-    switchRole.textContent = roles[roleIndex];
-  }, 1800);
+    // Fade out
+    switchRole.style.opacity = 0;
+    setTimeout(() => {
+      // Switch text after fade out
+      roleIndex = (roleIndex + 1) % roles.length;
+      switchRole.textContent = roles[roleIndex];
+      // Fade in
+      switchRole.style.opacity = 1;
+    }, fadeDuration);
+  }, interval);
 }
 </script>
   </body>

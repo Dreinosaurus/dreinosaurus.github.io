@@ -427,3 +427,33 @@ body {
   color: var(--text-primary);
   font-family: 'Inter', sans-serif;
 }
+
+/* Make all buttons, cards, and skill/tool icons clickable on all platforms */
+button, .btn-primary, .btn-outline, .project-card, .skill-icon, .skill-tag, .social-icon, a {
+  cursor: pointer !important;
+  -webkit-tap-highlight-color: rgba(138,43,226,0.18);
+  touch-action: manipulation;
+}
+
+/* Improve tap area for skill/tool icons and tags */
+.skill-icon, .skill-tag {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(138,43,226,0.18);
+  outline: none;
+}
+
+/* Remove tap highlight for all clickable elements for a cleaner look */
+button:focus, .btn-primary:focus, .btn-outline:focus, .project-card:focus, .skill-icon:focus, .skill-tag:focus, .social-icon:focus, a:focus {
+  outline: 2px solid #8A2BE2;
+  outline-offset: 2px;
+}
+
+/* Make .project-card and .skill-icon visually indicate click/tap on mobile */
+@media (hover: none) and (pointer: coarse) {
+  .project-card:active, .btn-primary:active, .btn-outline:active, .skill-icon:active, .skill-tag:active, .social-icon:active {
+    filter: brightness(0.92) saturate(1.1);
+    box-shadow: 0 0 0 2px #8A2BE2;
+    transition: filter 0.15s, box-shadow 0.15s;
+  }
+}
