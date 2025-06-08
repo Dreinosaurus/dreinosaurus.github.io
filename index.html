@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Christopher Andrei A. Escalante - Portfolio</title>
+    <title>Andrei Escalante - Web Portfolio</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>
       tailwind.config = {
@@ -332,49 +332,32 @@
   </head>
   <body class="min-h-screen">
     <!-- Navigation -->
-    <nav
-      class="fixed top-0 left-0 h-full w-16 md:w-20 bg-[#0a0d19] flex flex-col items-center py-6 z-50 border-r border-gray-800"
-    >
+    <nav class="fixed top-0 left-0 h-full w-16 bg-[#0a0d19] flex flex-col items-center py-6 z-50 border-r border-gray-800">
       <div class="mb-4 text-primary font-['Pacifico'] text-xl">
         <span style="display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; background: #18192b; border-radius: 18px;">
           <img src="resources/CAE Logo no bg.png" alt="CAE Logo" class="mx-auto" style="width: 54px; height: 54px; min-width: 54px; min-height: 54px; max-width: 100%; max-height: 100%; object-fit: contain;" />
         </span>
       </div>
       <!-- Menu Button -->
-      <button id="menuToggle" aria-label="Toggle menu" class="mb-8 focus:outline-none group relative w-10 h-10 flex items-center justify-center sm:w-12 sm:h-12">
+      <button id="menuToggle" aria-label="Toggle menu" class="mb-8 focus:outline-none group relative w-10 h-10 flex items-center justify-center">
         <span class="block absolute h-0.5 w-7 bg-primary rounded transition-all duration-300 ease-in-out top-3 left-1.5"></span>
         <span class="block absolute h-0.5 w-7 bg-primary rounded transition-all duration-300 ease-in-out top-5 left-1.5"></span>
         <span class="block absolute h-0.5 w-7 bg-primary rounded transition-all duration-300 ease-in-out top-7 left-1.5"></span>
       </button>
       <div id="navIcons" class="flex flex-col items-center space-y-8 flex-grow">
-        <a
-          href="#home"
-          class="nav-item w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary"
-        >
+        <a href="#home" class="nav-item w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary">
           <i class="ri-home-5-line ri-lg"></i>
         </a>
-        <a
-          href="#about"
-          class="nav-item w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary"
-        >
+        <a href="#about" class="nav-item w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary">
           <i class="ri-user-line ri-lg"></i>
         </a>
-        <a
-          href="#projects"
-          class="nav-item w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary"
-        >
+        <a href="#projects" class="nav-item w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary">
           <i class="ri-folder-line ri-lg"></i>
         </a>
-        <a
-          href="#skills"
-          class="nav-item w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary"
-        >
+        <a href="#skills" class="nav-item w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary">
           <i class="ri-tools-line ri-lg"></i>
         </a>
-        <a
-          href="#contact"
-          class="nav-item w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary"
-        >
+        <a href="#contact" class="nav-item w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary">
           <i class="ri-mail-line ri-lg"></i>
         </a>
       </div>
@@ -383,7 +366,7 @@
       </div>
     </nav>
     <!-- Main Content -->
-    <main class="ml-16 md:ml-20">
+    <main class="ml-16">
       <!-- Hero Section -->
       <section
         id="home"
@@ -395,11 +378,10 @@
           >
             <div class="md:w-3/5">
               <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                Hi, I'm Christopher Andrei A. Escalante
+                Hi, I'm <span id="heroName" style="background: linear-gradient(90deg, #8A2BE2 0%, #00E5FF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent;">Andrei Escalante</span>
               </h1>
-              <p class="text-secondary text-lg md:text-xl mb-6">
-                A 3rd Year BSIT Student & Aspiring Web Developer + UI/UX
-                Designer
+              <p class="text-white text-secondary text-lg md:text-xl mb-6">
+                A BSIT Student & <span id="switchRole" style="font-weight:600; background: linear-gradient(90deg, #00E5FF 0%, #8A2BE2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent;">Web Developer</span>
               </p>
               <p class="text-gray-400 italic mb-8">
                 "Designing websites that inspire and empower."
@@ -425,7 +407,7 @@
                 <span class="absolute rounded-full" style="width: 240px; height: 240px; border: 3px solid #8A2BE2; box-shadow: 0 0 10px 0 #8A2BE2, 0 0 0 8px rgba(138,43,226,0.08); z-index: 2;"></span>
                 <img
                   src="resources/Profile Photo.jpg"
-                  alt="Christopher Andrei A. Escalante"
+                  alt="Andrei Escalante"
                   class="rounded-full object-cover object-top"
                   style="width: 220px; height: 220px; z-index: 3; position: relative;"
                 />
@@ -1007,7 +989,7 @@
         <div class="max-w-7xl mx-auto">
           <div class="flex flex-col md:flex-row justify-between items-center">
             <p class="text-gray-400 mb-4 md:mb-0">
-              © 2025 Christopher Andrei A. Escalante. All rights reserved.
+              © 2025 Andrei Escalante. All rights reserved.
             </p>
             <div class="flex space-x-4">
               <a
@@ -1155,6 +1137,18 @@ function closeModal() {
     messageModal.classList.add("hidden");
     messageModal.classList.remove("flex");
   }
+}
+</script>
+<script>
+// Animated role switcher for hero section
+const roles = ["Web Developer", "UI|UX Designer"];
+let roleIndex = 0;
+const switchRole = document.getElementById("switchRole");
+if (switchRole) {
+  setInterval(() => {
+    roleIndex = (roleIndex + 1) % roles.length;
+    switchRole.textContent = roles[roleIndex];
+  }, 1800);
 }
 </script>
   </body>
