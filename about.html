@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Andrei Escalante</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
+.purple-border { border: 4px solid #7b6cf6; }
+.nav-link-active::after {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 32px;
+  height: 4px;
+  background: #7b6cf6;
+  border-radius: 2px;
+  margin-top: 2px;
+}
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+.mobile-menu.open {
+  transform: translateX(0);
+}
+@media (max-width: 768px) {
+  .nav-link-active::after {
+    width: 80px;
+    height: 4px;
+    background: #7b6cf6;
+    margin-top: 0.25em;
+  }
+  .nav-links {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+@media (min-width: 769px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+</style>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="w-full bg-[#15171c] border-b border-[#23242a] fixed top-0 left-0 z-50">
+  <div class="container mx-auto px-4 sm:px-8 py-3 flex justify-between items-center">
+    <div class="text-xl sm:text-2xl font-bold tracking-widest text-white">DREINOSAUR</div>
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex space-x-6 lg:space-x-10">
+      <a href="index.html" class="relative text-white font-medium tracking-wide uppercase pb-1">HOME</a>
+      <a href="about.html" class="relative text-white font-medium tracking-wide uppercase pb-1 nav-link-active">ABOUT</a>
+      <a href="resume.html" class="relative text-white font-medium tracking-wide uppercase pb-1 hover:text-primary">RESUME</a>
+      <a href="services.html" class="relative text-white font-medium tracking-wide uppercase pb-1 hover:text-primary">SERVICES</a>
+      <a href="portfolio.html" class="relative text-white font-medium tracking-wide uppercase pb-1 hover:text-primary">PORTFOLIO</a>
+      <a href="contact.html" class="relative text-white font-medium tracking-wide uppercase pb-1 hover:text-primary">CONTACT</a>
+    </div>
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn md:hidden text-white text-2xl" onclick="toggleMobileMenu()">
+      <i class="ri-menu-line"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-full h-full bg-[#15171c] z-50 md:hidden">
+  <div class="flex justify-between items-center p-4 border-b border-[#23242a]">
+    <div class="text-xl font-bold tracking-widest text-white">DREINOSAUR</div>
+    <button onclick="toggleMobileMenu()" class="text-white text-2xl">
+      <i class="ri-close-line"></i>
+    </button>
+  </div>
+  <div class="flex flex-col space-y-4 p-8">
+    <a href="index.html" class="text-white font-medium tracking-wide uppercase py-2">HOME</a>
+    <a href="about.html" class="text-white font-medium tracking-wide uppercase py-2 nav-link-active">ABOUT</a>
+    <a href="resume.html" class="text-white font-medium tracking-wide uppercase py-2 hover:text-primary">RESUME</a>
+    <a href="services.html" class="text-white font-medium tracking-wide uppercase py-2 hover:text-primary">SERVICES</a>
+    <a href="portfolio.html" class="text-white font-medium tracking-wide uppercase py-2 hover:text-primary">PORTFOLIO</a>
+    <a href="contact.html" class="text-white font-medium tracking-wide uppercase py-2 hover:text-primary">CONTACT</a>
+  </div>
+</div>
+
+<div class="pt-20 sm:pt-24"></div>
+
+<!-- About Content -->
+<div class="container mx-auto px-4 sm:px-8 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 min-h-[80vh]">
+  <div class="w-full lg:w-1/3 flex justify-center items-center reveal">
+    <div class="w-48 h-48 sm:w-64 sm:h-64 rounded-full overflow-hidden purple-border flex items-center justify-center">
+      <img src="assets/hero photos/Dreino ID.jpg" alt="Andrei Escalante" class="object-cover w-full h-full">
+    </div>
+  </div>
+  <div class="w-full lg:w-2/3 flex flex-col justify-center h-full">
+    <h1 class="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center lg:text-left reveal">About Me</h1>
+    <h2 class="text-xl sm:text-2xl font-normal mb-4 text-center lg:text-left reveal">I'm <span class="text-[#6366f1] font-semibold">Andrei Escalante</span>, a Web Developer & UI Designer</h2>
+    <p class="text-gray-200 mb-6 max-w-2xl text-sm sm:text-base text-center lg:text-left reveal">I am a passionate student at STI College Puerto Princesa, currently in my 4th year of BSIT. My journey in tech has been driven by a deep interest in creating intuitive and visually appealing web solutions that solve real problems. With a foundation in both front-end development and UI design principles, I strive to bridge the gap between functionality and aesthetics to deliver exceptional digital experiences.</p>
+    <div class="flex flex-col sm:flex-row flex-wrap items-center gap-3 mb-6 sm:mb-8 text-center lg:text-left reveal">
+      <div class="flex items-center gap-2">
+        <span class="text-[#7b6cf6] text-sm sm:text-base">Location:</span>
+        <span class="text-gray-200 text-sm sm:text-base">Puerto Princesa, Palawan</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-[#7b6cf6] text-sm sm:text-base">Status:</span>
+        <span class="text-green-400 text-sm sm:text-base">Available for work</span>
+      </div>
+    </div>
+    <h3 class="text-lg sm:text-xl font-semibold mb-4 text-center lg:text-left reveal">Hobbies & Interests:</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 sm:gap-x-12 gap-y-2 mb-6 text-sm sm:text-base reveal">
+      <div class="text-center lg:text-left">
+        <div class="flex items-center mb-2 justify-center lg:justify-start"><i class="ri-checkbox-circle-fill text-[#00e0d6] mr-2"></i>Reading Manhwa & Manhua</div>
+        <div class="flex items-center mb-2 justify-center lg:justify-start"><i class="ri-checkbox-circle-fill text-[#00e0d6] mr-2"></i>Learning new skills</div>
+        <div class="flex items-center mb-2 justify-center lg:justify-start"><i class="ri-checkbox-circle-fill text-[#00e0d6] mr-2"></i>Working out</div>
+      </div>
+      <div class="text-center lg:text-left">
+        <div class="flex items-center mb-2 justify-center lg:justify-start"><i class="ri-checkbox-circle-fill text-[#00e0d6] mr-2"></i>Exploring AI & emerging technologies</div>
+        <div class="flex items-center mb-2 justify-center lg:justify-start"><i class="ri-checkbox-circle-fill text-[#00e0d6] mr-2"></i>Playing online games & sports</div>
+      </div>
+    </div>
+    <div class="flex justify-center lg:justify-start reveal">
+      <a href="assets/Escalante_CV.pdf" target="_blank" class="inline-flex items-center bg-[#7b6cf6] hover:bg-[#6d5be4] text-white px-4 sm:px-6 py-2 rounded-lg font-semibold text-sm sm:text-base transition"><i class="ri-eye-fill mr-2"></i>View CV</a>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+  // Mobile menu functionality
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('open');
+  }
+
+  // ScrollReveal animations
+  ScrollReveal().reveal('.reveal', {
+    distance: '50px',
+    duration: 1000,
+    easing: 'ease',
+    origin: 'bottom',
+    interval: 100,
+    opacity: 0,
+    reset: false,
+    viewFactor: 0.2 // Trigger when 20% of the element is visible
+  });
+</script>
+</body>
+</html> 

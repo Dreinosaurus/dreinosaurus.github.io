@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume - Andrei Escalante</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
+.badge { @apply inline-block px-2 py-0.5 rounded-full text-xs font-semibold; }
+.nav-link-active::after {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 32px;
+  height: 4px;
+  background: #7b6cf6;
+  border-radius: 2px;
+  margin-top: 2px;
+}
+.cert-card, .skill-badge {
+  transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 0 0 0 rgba(123,108,246,0.25);
+  position: relative;
+  z-index: 1;
+}
+.cert-card:hover, .skill-badge:hover {
+  transform: scale(1.045);
+  box-shadow: 0 0 16px 4px rgba(123,108,246,0.35), 0 0 0 2px #7b6cf6;
+}
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+.mobile-menu.open {
+  transform: translateX(0);
+}
+@media (max-width: 768px) {
+  .nav-link-active::after {
+    width: 80px;
+    height: 4px;
+    background: #7b6cf6;
+    margin-top: 0.25em;
+  }
+  .nav-links {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+@media (min-width: 769px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+</style>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="w-full bg-[#15171c] border-b border-[#23242a] fixed top-0 left-0 z-50">
+  <div class="container mx-auto px-4 sm:px-8 py-3 flex justify-between items-center">
+    <div class="text-xl sm:text-2xl font-bold tracking-widest text-white">DREINOSAUR</div>
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex space-x-6 lg:space-x-10">
+      <a href="index.html" class="relative text-white font-medium tracking-wide uppercase pb-1">HOME</a>
+      <a href="about.html" class="relative text-white font-medium tracking-wide uppercase pb-1 hover:text-primary">ABOUT</a>
+      <a href="resume.html" class="relative text-white font-medium tracking-wide uppercase pb-1 nav-link-active">RESUME</a>
+      <a href="services.html" class="relative text-white font-medium tracking-wide uppercase pb-1 hover:text-primary">SERVICES</a>
+      <a href="portfolio.html" class="relative text-white font-medium tracking-wide uppercase pb-1 hover:text-primary">PORTFOLIO</a>
+      <a href="contact.html" class="relative text-white font-medium tracking-wide uppercase pb-1 hover:text-primary">CONTACT</a>
+    </div>
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn md:hidden text-white text-2xl" onclick="toggleMobileMenu()">
+      <i class="ri-menu-line"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-full h-full bg-[#15171c] z-50 md:hidden">
+  <div class="flex justify-between items-center p-4 border-b border-[#23242a]">
+    <div class="text-xl font-bold tracking-widest text-white">DREINOSAUR</div>
+    <button onclick="toggleMobileMenu()" class="text-white text-2xl">
+      <i class="ri-close-line"></i>
+    </button>
+  </div>
+  <div class="flex flex-col space-y-4 p-8">
+    <a href="index.html" class="text-white font-medium tracking-wide uppercase py-2">HOME</a>
+    <a href="about.html" class="text-white font-medium tracking-wide uppercase py-2 hover:text-primary">ABOUT</a>
+    <a href="resume.html" class="text-white font-medium tracking-wide uppercase py-2 nav-link-active">RESUME</a>
+    <a href="services.html" class="text-white font-medium tracking-wide uppercase py-2 hover:text-primary">SERVICES</a>
+    <a href="portfolio.html" class="text-white font-medium tracking-wide uppercase py-2 hover:text-primary">PORTFOLIO</a>
+    <a href="contact.html" class="text-white font-medium tracking-wide uppercase py-2 hover:text-primary">CONTACT</a>
+  </div>
+</div>
+
+<div class="pt-20 sm:pt-24"></div>
+
+<!-- Resume Content -->
+<div class="container mx-auto px-4 sm:px-8 pb-16">
+  <h1 class="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 reveal">My Resume</h1>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-8 sm:mb-12">
+    <!-- Education -->
+    <div class="reveal">
+      <h2 class="flex items-center text-lg sm:text-xl font-semibold mb-4 sm:mb-6"><i class="ri-graduation-cap-fill mr-3" style="color: #00e0d6;"></i>Education</h2>
+      <div class="border-l-2 border-[#7b6cf6] pl-4 sm:pl-6">
+        <div class="mb-6 sm:mb-8">
+          <div class="flex items-center mb-1">
+            <span class="w-2 h-2 sm:w-3 sm:h-3 bg-[#7b6cf6] rounded-full mr-2 sm:mr-3"></span>
+            <span class="font-semibold text-base sm:text-lg">Tertiary (2022–2026)</span>
+          </div>
+          <div class="text-[#00e0d6] font-medium mb-2 text-sm sm:text-base">STI College Puerto Princesa</div>
+          <div class="space-y-3">
+            <div class="bg-[#23242a] rounded-lg p-3 sm:p-4">
+              <div class="font-semibold mb-1 text-sm sm:text-base">2022–2023 Academic Year</div>
+              <div class="flex flex-col gap-2 text-xs sm:text-sm text-gray-300 mb-1">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                  <span>1st Term Tertiary - GWA: 1.42</span>
+                  <span class="flex items-center gap-2 mt-1 sm:mt-0 sm:min-w-[120px] sm:justify-end">
+                    <span class="inline-block min-w-[80px] sm:min-w-[90px] text-center px-2 sm:px-3 py-0.5 text-xs font-semibold text-white" style="background: transparent; border: 2px solid; border-image: linear-gradient(90deg, #7b6cf6 60%, #00e0d6 100%); border-image-slice: 1; border-radius: 9999px;">Dean's List</span>
+                    <i class="ri-award-fill text-yellow-400"></i>
+                  </span>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                  <span>2nd Term Tertiary - GWA: 1.39</span>
+                  <span class="flex items-center gap-2 mt-1 sm:mt-0 sm:min-w-[120px] sm:justify-end">
+                    <span class="inline-block min-w-[80px] sm:min-w-[90px] text-center px-2 sm:px-3 py-0.5 text-xs font-semibold text-white" style="background: transparent; border: 2px solid; border-image: linear-gradient(90deg, #7b6cf6 60%, #00e0d6 100%); border-image-slice: 1; border-radius: 9999px;">Dean's List</span>
+                    <i class="ri-award-fill text-yellow-400"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="bg-[#23242a] rounded-lg p-3 sm:p-4">
+              <div class="font-semibold mb-1 text-sm sm:text-base">2023–2024 Academic Year</div>
+              <div class="flex flex-col gap-2 text-xs sm:text-sm text-gray-300 mb-1">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                  <span>1st Term Tertiary - GWA: 1.26</span>
+                  <span class="flex items-center gap-2 mt-1 sm:mt-0 sm:min-w-[120px] sm:justify-end">
+                    <span class="inline-block min-w-[80px] sm:min-w-[90px] text-center px-2 sm:px-3 py-0.5 text-xs font-semibold text-white" style="background: transparent; border: 2px solid; border-image: linear-gradient(90deg, #7b6cf6 60%, #00e0d6 100%); border-image-slice: 1; border-radius: 9999px;">Dean's List</span>
+                    <i class="ri-award-fill text-yellow-400"></i>
+                  </span>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                  <span>2nd Term Tertiary - GWA: 1.2</span>
+                  <span class="flex items-center gap-2 mt-1 sm:mt-0 sm:min-w-[120px] sm:justify-end">
+                    <span class="inline-block min-w-[80px] sm:min-w-[90px] text-center px-2 sm:px-3 py-0.5 text-xs font-semibold text-white" style="background: transparent; border: 2px solid; border-image: linear-gradient(90deg, #7b6cf6 60%, #00e0d6 100%); border-image-slice: 1; border-radius: 9999px;">Dean's List</span>
+                    <i class="ri-award-fill text-yellow-400"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="bg-[#23242a] rounded-lg p-3 sm:p-4">
+              <div class="font-semibold mb-1 text-sm sm:text-base">2024–2025 Academic Year</div>
+              <div class="flex flex-col gap-2 text-xs sm:text-sm text-gray-300 mb-1">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                  <span>1st Term Tertiary - GWA: 1.54</span>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                  <span>2nd Term Tertiary - GWA: 1.32</span>
+                  <span class="flex items-center gap-2 mt-1 sm:mt-0 sm:min-w-[120px] sm:justify-end">
+                    <span class="inline-block min-w-[80px] sm:min-w-[90px] text-center px-2 sm:px-3 py-0.5 text-xs font-semibold text-white" style="background: transparent; border: 2px solid; border-image: linear-gradient(90deg, #7b6cf6 60%, #00e0d6 100%); border-image-slice: 1; border-radius: 9999px;">Dean's List</span>
+                    <i class="ri-award-fill text-yellow-400"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="bg-[#23242a] rounded-lg p-3 sm:p-4">
+              <div class="font-semibold mb-1 text-sm sm:text-base">2025–2026 Academic Year</div>
+              <div class="flex flex-col gap-1 text-xs sm:text-sm text-gray-300 mb-1">
+                <div>1st Term Tertiary - GWA: (Ongoing)</div>
+                <div>2nd Term Tertiary - GWA: (Ongoing)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Key Skills & Experience -->
+    <div class="reveal">
+      <h2 class="flex items-center text-lg sm:text-xl font-semibold mb-4 sm:mb-6"><i class="ri-code-s-slash-line text-[#00e0d6] mr-3"></i>Key Skills</h2>
+      <div class="mb-6">
+        <div class="font-semibold mb-2 text-sm sm:text-base">Languages</div>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">HTML</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">CSS</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">JavaScript</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">Java</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">Python</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">C#</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">PHP</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">SQL</span>
+        </div>
+        <div class="font-semibold mb-2 text-sm sm:text-base">Tools & Platforms</div>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">Figma</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">Adobe Photoshop</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">Premiere Pro</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">DaVinci Resolve</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">CapCut</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">Blender</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">VS Code</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">Visual Studio</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">IntelliJ</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">GitHub</span>
+        </div>
+        <div class="font-semibold mb-2 text-sm sm:text-base">AI & Automation</div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">ChatGPT</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">DeepSeek</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">Cursor</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">GitHub Copilot</span>
+          <span class="bg-[#23242a] px-2 sm:px-3 py-1 rounded text-xs sm:text-sm skill-badge">Leonardo AI</span>
+        </div>
+      </div>
+      <h2 class="flex items-center text-lg sm:text-xl font-semibold mb-4 reveal"><i class="ri-briefcase-4-fill text-[#00e0d6] mr-3"></i>Internship Experience</h2>
+      <div class="bg-[#23242a] rounded-lg p-3 sm:p-4 mb-6">
+        <div class="flex flex-col sm:flex-row sm:items-center mb-2">
+          <span class="font-semibold text-sm sm:text-base">Intern Web Developer</span>
+          <span class="mt-1 sm:mt-0 sm:ml-3 bg-[#23242a] text-[#00e0d6] px-2 py-0.5 rounded-full text-xs font-semibold border border-[#00e0d6] w-fit">Ongoing</span>
+        </div>
+        <div class="text-[#00e0d6] font-medium mb-1 text-sm sm:text-base">[Company Name], Puerto Princesa</div>
+        <ul class="list-none pl-0 text-gray-300 text-xs sm:text-sm space-y-1">
+          <li class="flex items-start"><i class="ri-checkbox-circle-fill text-[#00e0d6] mr-2 mt-0.5 flex-shrink-0"></i>Assisting in front-end feature builds using React and Tailwind</li>
+          <li class="flex items-start"><i class="ri-checkbox-circle-fill text-[#00e0d6] mr-2 mt-0.5 flex-shrink-0"></i>Participating in daily SCRUM stand-ups</li>
+          <li class="flex items-start"><i class="ri-checkbox-circle-fill text-[#00e0d6] mr-2 mt-0.5 flex-shrink-0"></i>Documenting code and contributing to Git workflows</li>
+        </ul>
+      </div>
+      <h2 class="flex items-center text-lg sm:text-xl font-semibold mb-4 reveal"><i class="ri-lightbulb-flash-fill mr-3" style="color: #00e0d6;"></i>Capstone Project</h2>
+      <div class="bg-[#23242a] rounded-lg p-3 sm:p-4">
+        <div class="font-semibold mb-1 text-sm sm:text-base">Digital Transformation Center – Palawan</div>
+        <div class="text-[#00e0d6] font-medium mb-1 text-sm sm:text-base">QR-Code Based Client Monitoring System</div>
+        <div class="text-gray-300 text-xs sm:text-sm">A web-based system that generates QR tokens for clients, tracks attendance/status, and provides analytics dashboards.</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Certifications & Seminars -->
+  <div class="mt-8 sm:mt-12">
+    <h2 class="flex items-center text-lg sm:text-xl font-semibold mb-4 sm:mb-6 reveal"><i class="ri-award-fill text-[#00e0d6] mr-3"></i>Certifications & Seminars</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+      <div class="bg-[#23242a] rounded-lg p-4 sm:p-6 flex flex-col justify-between cert-card reveal">
+        <div class="font-semibold mb-2 text-sm sm:text-base">SAP S/4HANA</div>
+        <div class="text-gray-400 mb-1 text-xs sm:text-sm">2023-2024</div>
+        <div class="text-xs text-gray-500">STI College</div>
+      </div>
+      <div class="bg-[#23242a] rounded-lg p-4 sm:p-6 flex flex-col justify-between cert-card reveal">
+        <div class="font-semibold mb-2 text-sm sm:text-base">Network Technology</div>
+        <div class="text-gray-400 mb-1 text-xs sm:text-sm">2024</div>
+        <div class="text-xs text-gray-500">DICT</div>
+      </div>
+      <div class="bg-[#23242a] rounded-lg p-4 sm:p-6 flex flex-col justify-between cert-card reveal">
+        <div class="font-semibold mb-2 text-sm sm:text-base">Cyber Security Awareness</div>
+        <div class="text-gray-400 mb-1 text-xs sm:text-sm">2023</div>
+        <div class="text-xs text-gray-500">DICT</div>
+      </div>
+      <div class="bg-[#23242a] rounded-lg p-4 sm:p-6 flex flex-col justify-between cert-card reveal">
+        <div class="font-semibold mb-2 text-sm sm:text-base">HMTL Essentials</div>
+        <div class="text-gray-400 mb-1 text-xs sm:text-sm">2025</div>
+        <div class="text-xs text-gray-500">CISCO</div>
+      </div>
+      <div class="bg-[#23242a] rounded-lg p-4 sm:p-6 flex flex-col justify-between cert-card reveal">
+        <div class="font-semibold mb-2 text-sm sm:text-base">CSS Essentials</div>
+        <div class="text-gray-400 mb-1 text-xs sm:text-sm">2025</div>
+        <div class="text-xs text-gray-500">CISCO</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+  // Mobile menu functionality
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('open');
+  }
+
+  // ScrollReveal animations
+  ScrollReveal().reveal('.reveal', {
+    distance: '50px',
+    duration: 1000,
+    easing: 'ease',
+    origin: 'bottom',
+    interval: 100,
+    opacity: 0,
+    reset: false,
+    viewFactor: 0.2 // Trigger when 20% of the element is visible
+  });
+</script>
+</body>
+</html> 

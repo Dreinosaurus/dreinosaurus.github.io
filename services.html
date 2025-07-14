@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Services - Andrei Escalante</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
+.testimonial-flip { perspective: 1200px; }
+.testimonial-card-inner {
+  transition: transform 0.7s cubic-bezier(.4,2,.6,1); transform-style: preserve-3d;
+}
+.testimonial-card.flipped .testimonial-card-inner { transform: rotateY(180deg); }
+.testimonial-card { backface-visibility: hidden; opacity: 0; visibility: hidden; transition: opacity 0.5s, visibility 0.5s; }
+.testimonial-card.active { opacity: 1; visibility: visible; }
+.nav-link-active::after {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 32px;
+  height: 4px;
+  background: #7b6cf6;
+  border-radius: 2px;
+  margin-top: 2px;
+}
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+.mobile-menu.open {
+  transform: translateX(0);
+}
+@media (max-width: 768px) {
+  .nav-link-active::after {
+    width: 80px;
+    height: 4px;
+    background: #7b6cf6;
+    margin-top: 0.25em;
+  }
+  .nav-links {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+@media (min-width: 769px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.slide-in {
+  animation: slideInRight 0.7s cubic-bezier(.4,2,.6,1);
+}
+</style>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="w-full bg-[#15171c] border-b border-[#23242a] fixed top-0 left-0 z-50">
+  <div class="container mx-auto px-4 sm:px-8 py-3 flex justify-between items-center">
+    <div class="text-xl sm:text-2xl font-bold tracking-widest text-white">DREINOSAUR</div>
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex space-x-6 lg:space-x-10">
+      <a href="index.html" class="relative text-white font-medium tracking-wide uppercase pb-1">HOME</a>
+      <a href="about.html" class="relative text-white font-medium tracking-wide uppercase pb-1 hover:text-primary">ABOUT</a>
+      <a href="resume.html" class="relative text-white font-medium tracking-wide uppercase pb-1 hover:text-primary">RESUME</a>
+      <a href="services.html" class="relative text-white font-medium tracking-wide uppercase pb-1 nav-link-active">SERVICES</a>
+      <a href="portfolio.html" class="relative text-white font-medium tracking-wide uppercase pb-1 hover:text-primary">PORTFOLIO</a>
+      <a href="contact.html" class="relative text-white font-medium tracking-wide uppercase pb-1 hover:text-primary">CONTACT</a>
+    </div>
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn md:hidden text-white text-2xl" onclick="toggleMobileMenu()">
+      <i class="ri-menu-line"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-full h-full bg-[#15171c] z-50 md:hidden">
+  <div class="flex justify-between items-center p-4 border-b border-[#23242a]">
+    <div class="text-xl font-bold tracking-widest text-white">DREINOSAUR</div>
+    <button onclick="toggleMobileMenu()" class="text-white text-2xl">
+      <i class="ri-close-line"></i>
+    </button>
+  </div>
+  <div class="flex flex-col space-y-4 p-8">
+    <a href="index.html" class="text-white font-medium tracking-wide uppercase py-2">HOME</a>
+    <a href="about.html" class="text-white font-medium tracking-wide uppercase py-2 hover:text-primary">ABOUT</a>
+    <a href="resume.html" class="text-white font-medium tracking-wide uppercase py-2 hover:text-primary">RESUME</a>
+    <a href="services.html" class="text-white font-medium tracking-wide uppercase py-2 nav-link-active">SERVICES</a>
+    <a href="portfolio.html" class="text-white font-medium tracking-wide uppercase py-2 hover:text-primary">PORTFOLIO</a>
+    <a href="contact.html" class="text-white font-medium tracking-wide uppercase py-2 hover:text-primary">CONTACT</a>
+  </div>
+</div>
+
+<div class="pt-20 sm:pt-24"></div>
+
+<!-- My Services Section -->
+<div class="container mx-auto px-4 sm:px-8 pb-16">
+  <h1 class="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 reveal">My Services</h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16">
+    <div class="bg-[#1A1D24] rounded-xl p-6 sm:p-8 flex flex-col items-center border border-[#7b6cf6]/30 shadow-[0_0_16px_0_rgba(123,108,246,0.25)] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0_32px_0_rgba(123,108,246,0.35)] reveal">
+      <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-[#2d254a] rounded-lg mb-3 sm:mb-4">
+        <i class="ri-shapes-fill text-xl sm:text-2xl text-[#7b6cf6]"></i>
+      </div>
+      <h2 class="text-xl sm:text-2xl font-bold mb-2 text-center">UI Design</h2>
+      <p class="text-gray-400 text-center text-sm sm:text-lg">Creating intuitive, visually appealing interfaces that enhance user experience and engagement.</p>
+    </div>
+    <div class="bg-[#1A1D24] rounded-xl p-6 sm:p-8 flex flex-col items-center border border-[#7b6cf6]/30 shadow-[0_0_16px_0_rgba(123,108,246,0.25)] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0_32px_0_rgba(123,108,246,0.35)] reveal">
+      <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-[#2d254a] rounded-lg mb-3 sm:mb-4">
+        <i class="ri-code-s-slash-line text-xl sm:text-2xl text-[#7b6cf6]"></i>
+      </div>
+      <h2 class="text-xl sm:text-2xl font-bold mb-2 text-center">Web Development</h2>
+      <p class="text-gray-400 text-center text-sm sm:text-lg">Building responsive, modern websites and web applications with clean, efficient code.</p>
+    </div>
+    <div class="bg-[#1A1D24] rounded-xl p-6 sm:p-8 flex flex-col items-center border border-[#7b6cf6]/30 shadow-[0_0_16px_0_rgba(123,108,246,0.25)] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0_32px_0_rgba(123,108,246,0.35)] reveal">
+      <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-[#2d254a] rounded-lg mb-3 sm:mb-4">
+        <i class="ri-palette-fill text-xl sm:text-2xl text-[#7b6cf6]"></i>
+      </div>
+      <h2 class="text-xl sm:text-2xl font-bold mb-2 text-center">Branding Design</h2>
+      <p class="text-gray-400 text-center text-sm sm:text-lg">Crafting cohesive visual identities that communicate your brand's unique values and personality.</p>
+    </div>
+    <div class="bg-[#1A1D24] rounded-xl p-6 sm:p-8 flex flex-col items-center border border-[#7b6cf6]/30 shadow-[0_0_16px_0_rgba(123,108,246,0.25)] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0_32px_0_rgba(123,108,246,0.35)] reveal">
+      <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-[#2d254a] rounded-lg mb-3 sm:mb-4">
+        <i class="ri-film-fill text-xl sm:text-2xl text-[#7b6cf6]"></i>
+      </div>
+      <h2 class="text-xl sm:text-2xl font-bold mb-2 text-center">Photo & Video Editing</h2>
+      <p class="text-gray-400 text-center text-sm sm:text-lg">Professional editing services to enhance visual content for maximum impact and quality.</p>
+    </div>
+  </div>
+  
+  <!-- Testimonials Section -->
+  <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10 reveal">What People Say</h2>
+  <div id="testimonial-carousel" class="relative flex flex-col items-center">
+    <div class="w-full flex justify-center testimonial-flip">
+      <div class="testimonial-card bg-[#23242a] rounded-xl p-6 sm:p-8 flex flex-col transition-transform duration-300 hover:scale-105 hover:shadow-lg mx-auto testimonial-card-inner" style="max-width: 600px; width: 100%;">
+        <div class="flex items-center mb-4">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Smith" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4">
+          <div>
+            <div class="font-semibold text-base sm:text-lg">John Smith</div>
+            <div class="text-xs text-gray-400">Project Manager</div>
+          </div>
+        </div>
+        <p class="italic text-gray-300 mb-4 text-sm sm:text-lg">"Andrei delivered exceptional UI designs for our project. His attention to detail and creative solutions exceeded our expectations."</p>
+        <div class="flex text-yellow-400 text-lg sm:text-xl">
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+        </div>
+      </div>
+      <div class="testimonial-card bg-[#23242a] rounded-xl p-6 sm:p-8 flex flex-col transition-transform duration-300 hover:scale-105 hover:shadow-lg mx-auto testimonial-card-inner" style="max-width: 600px; width: 100%;">
+        <div class="flex items-center mb-4">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4">
+          <div>
+            <div class="font-semibold text-base sm:text-lg">Sarah Johnson</div>
+            <div class="text-xs text-gray-400">Startup Founder</div>
+          </div>
+        </div>
+        <p class="italic text-gray-300 mb-4 text-sm sm:text-lg">"Working with Andrei was a pleasure. He transformed our website with clean code and modern design that truly represents our brand."</p>
+        <div class="flex text-yellow-400 text-lg sm:text-xl">
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+        </div>
+      </div>
+      <div class="testimonial-card bg-[#23242a] rounded-xl p-6 sm:p-8 flex flex-col transition-transform duration-300 hover:scale-105 hover:shadow-lg mx-auto testimonial-card-inner" style="max-width: 600px; width: 100%;">
+        <div class="flex items-center mb-4">
+          <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Michael Chen" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4">
+          <div>
+            <div class="font-semibold text-base sm:text-lg">Michael Chen</div>
+            <div class="text-xs text-gray-400">Marketing Director</div>
+          </div>
+        </div>
+        <p class="italic text-gray-300 mb-4 text-sm sm:text-lg">"Andrei's video editing skills are top-notch. He created compelling content that significantly boosted our engagement metrics."</p>
+        <div class="flex text-yellow-400 text-lg sm:text-xl">
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+        </div>
+      </div>
+    </div>
+    <!-- Carousel Dots -->
+    <div class="flex justify-center space-x-2 mt-4">
+      <span class="carousel-dot w-3 h-3 rounded-full bg-[#7b6cf6] inline-block cursor-pointer" data-index="0"></span>
+      <span class="carousel-dot w-3 h-3 rounded-full bg-[#23242a] inline-block cursor-pointer" data-index="1"></span>
+      <span class="carousel-dot w-3 h-3 rounded-full bg-[#23242a] inline-block cursor-pointer" data-index="2"></span>
+    </div>
+  </div>
+  
+  <script>
+  (function() {
+    const carousel = document.getElementById('testimonial-carousel');
+    const cards = carousel.querySelectorAll('.testimonial-card');
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    let current = 0;
+    let interval;
+    
+    function show(index, flip=true) {
+      cards.forEach((card, i) => {
+        card.classList.remove('active', 'flipped');
+        card.style.display = 'none';
+      });
+      if (flip) {
+        setTimeout(() => {
+          cards[index].classList.add('flipped');
+          setTimeout(() => cards[index].classList.remove('flipped'), 700);
+        }, 10);
+      }
+      cards[index].classList.add('active');
+      cards[index].style.display = 'flex';
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('bg-[#7b6cf6]', i === index);
+        dot.classList.toggle('bg-[#23242a]', i !== index);
+      });
+      current = index;
+    }
+    
+    function next() {
+      show((current + 1) % cards.length);
+    }
+    
+    function startAuto() {
+      interval = setInterval(next, 5000);
+    }
+    
+    function stopAuto() {
+      clearInterval(interval);
+    }
+    
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        show(Number(dot.dataset.index));
+        stopAuto();
+        startAuto();
+      });
+    });
+    
+    // Touch swipe
+    let startX = 0;
+    carousel.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
+    carousel.addEventListener('touchend', e => {
+      const endX = e.changedTouches[0].clientX;
+      if (endX - startX > 50) {
+        show((current - 1 + cards.length) % cards.length);
+        stopAuto(); startAuto();
+      } else if (startX - endX > 50) {
+        next(); stopAuto(); startAuto();
+      }
+    });
+    
+    // Init
+    show(0, false);
+    startAuto();
+  })();
+  </script>
+</div>
+
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+  // Mobile menu functionality
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('open');
+  }
+
+  // ScrollReveal animations
+  ScrollReveal().reveal('.reveal', {
+    distance: '50px',
+    duration: 1000,
+    easing: 'ease',
+    origin: 'bottom',
+    interval: 100,
+    opacity: 0,
+    reset: false,
+    viewFactor: 0.2 // Trigger when 20% of the element is visible
+  });
+
+  // Testimonial carousel slide-in effect
+  (function() {
+    const carousel = document.getElementById('testimonial-carousel');
+    const cards = carousel.querySelectorAll('.testimonial-card');
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    let current = 0;
+    let interval;
+
+    function showCard(index) {
+      cards.forEach((card, i) => {
+        card.classList.remove('active', 'slide-in');
+        if (i === index) {
+          card.classList.add('active', 'slide-in');
+        }
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('bg-[#7b6cf6]', i === index);
+        dot.classList.toggle('bg-[#23242a]', i !== index);
+      });
+      current = index;
+    }
+
+    function nextCard() {
+      showCard((current + 1) % cards.length);
+    }
+
+    function startInterval() {
+      interval = setInterval(nextCard, 5000);
+    }
+
+    function stopInterval() {
+      clearInterval(interval);
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        showCard(i);
+        stopInterval();
+        startInterval();
+      });
+    });
+
+    showCard(0);
+    startInterval();
+  })();
+</script>
+</body>
+</html> 
