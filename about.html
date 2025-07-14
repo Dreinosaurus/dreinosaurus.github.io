@@ -27,7 +27,23 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
 .mobile-menu.open {
   transform: translateX(0);
 }
-@media (max-width: 768px) {
+/* Mobile menu active underline */
+.mobile-menu .nav-link-active {
+  position: relative;
+}
+.mobile-menu .nav-link-active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 32px;
+  height: 4px;
+  background: #7b6cf6;
+  border-radius: 2px;
+  margin-top: 6px;
+}
+@media (max-width: 1279px) {
   .nav-link-active::after {
     width: 80px;
     height: 4px;
@@ -41,8 +57,14 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
     display: block;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 1280px) {
   .mobile-menu-btn {
+    display: none;
+  }
+  .nav-links {
+    display: flex;
+  }
+  .mobile-menu .nav-link-active::after {
     display: none;
   }
 }
@@ -54,7 +76,7 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
   <div class="container mx-auto px-4 sm:px-8 py-3 flex justify-between items-center">
     <div class="text-xl sm:text-2xl font-bold tracking-widest text-white">DREINOSAUR</div>
     <!-- Desktop Navigation -->
-    <div class="hidden md:flex space-x-6 lg:space-x-10">
+    <div class="hidden xl:flex space-x-6 lg:space-x-10 nav-links">
       <a href="index.html" class="relative text-white font-medium tracking-wide uppercase pb-1">HOME</a>
       <a href="about.html" class="relative text-white font-medium tracking-wide uppercase pb-1 nav-link-active">ABOUT</a>
       <a href="resume.html" class="relative text-white font-medium tracking-wide uppercase pb-1 hover:text-primary">RESUME</a>
@@ -63,14 +85,14 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
       <a href="contact.html" class="relative text-white font-medium tracking-wide uppercase pb-1 hover:text-primary">CONTACT</a>
     </div>
     <!-- Mobile Menu Button -->
-    <button class="mobile-menu-btn md:hidden text-white text-2xl" onclick="toggleMobileMenu()">
+    <button class="mobile-menu-btn text-white text-2xl" onclick="toggleMobileMenu()">
       <i class="ri-menu-line"></i>
     </button>
   </div>
 </nav>
 
 <!-- Mobile Menu -->
-<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-full h-full bg-[#15171c] z-50 md:hidden">
+<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-full h-full bg-[#15171c] z-50">
   <div class="flex justify-between items-center p-4 border-b border-[#23242a]">
     <div class="text-xl font-bold tracking-widest text-white">DREINOSAUR</div>
     <button onclick="toggleMobileMenu()" class="text-white text-2xl">

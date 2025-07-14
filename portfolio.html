@@ -31,7 +31,23 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
 .mobile-menu.open {
   transform: translateX(0);
 }
-@media (max-width: 768px) {
+/* Mobile menu active underline */
+.mobile-menu .nav-link-active {
+  position: relative;
+}
+.mobile-menu .nav-link-active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 32px;
+  height: 4px;
+  background: #7b6cf6;
+  border-radius: 2px;
+  margin-top: 6px;
+}
+@media (max-width: 1279px) {
   .nav-link-active::after {
     width: 80px;
     height: 4px;
@@ -45,8 +61,14 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
     display: block;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 1280px) {
   .mobile-menu-btn {
+    display: none;
+  }
+  .nav-links {
+    display: flex;
+  }
+  .mobile-menu .nav-link-active::after {
     display: none;
   }
 }
@@ -61,7 +83,7 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
   <div class="container mx-auto px-4 sm:px-8 py-3 flex justify-between items-center">
     <div class="text-xl sm:text-2xl font-bold tracking-widest text-white">DREINOSAUR</div>
     <!-- Desktop Navigation -->
-    <div class="hidden md:flex space-x-6 lg:space-x-10">
+    <div class="hidden xl:flex space-x-6 lg:space-x-10 nav-links">
       <a href="index.html" class="relative text-white font-medium tracking-wide uppercase pb-1 hover:text-primary">HOME</a>
       <a href="about.html" class="relative text-white font-medium tracking-wide uppercase pb-1 hover:text-primary">ABOUT</a>
       <a href="resume.html" class="relative text-white font-medium tracking-wide uppercase pb-1 hover:text-primary">RESUME</a>
@@ -70,14 +92,14 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
       <a href="contact.html" class="relative text-white font-medium tracking-wide uppercase pb-1 hover:text-primary">CONTACT</a>
     </div>
     <!-- Mobile Menu Button -->
-    <button class="mobile-menu-btn md:hidden text-white text-2xl" onclick="toggleMobileMenu()">
+    <button class="mobile-menu-btn text-white text-2xl" onclick="toggleMobileMenu()">
       <i class="ri-menu-line"></i>
     </button>
   </div>
 </nav>
 
 <!-- Mobile Menu -->
-<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-full h-full bg-[#15171c] z-50 md:hidden">
+<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-full h-full bg-[#15171c] z-50">
   <div class="flex justify-between items-center p-4 border-b border-[#23242a]">
     <div class="text-xl font-bold tracking-widest text-white">DREINOSAUR</div>
     <button onclick="toggleMobileMenu()" class="text-white text-2xl">
@@ -115,7 +137,7 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
   <div id="all-project-cards" style="display:none">
     <!-- Web Development -->
     <div class="bg-[#23242a] rounded-2xl overflow-hidden relative group shadow-lg project-card reveal" data-category="web">
-      <img src="assets/UI Personal WEB/Home Page.png" alt="Personal Portfolio & Blog" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
+      <img src="assets/Projects/Web Dev/Personal Portfolio & Blog.png" alt="Personal Portfolio & Blog" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6">
         <div>
           <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">Personal Portfolio & Blog</h3>
@@ -128,7 +150,7 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
       </div>
     </div>
     <div class="bg-[#23242a] rounded-2xl overflow-hidden relative group shadow-lg project-card reveal" data-category="web">
-      <img src="assets/UI Personal WEB/Services Page.png" alt="E-Commerce Store" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
+      <img src="assets/Projects/Web Dev/E‑Commerce Store.png" alt="E-Commerce Store" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6">
         <div>
           <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">E‑Commerce Store</h3>
@@ -141,7 +163,7 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
       </div>
     </div>
     <div class="bg-[#23242a] rounded-2xl overflow-hidden relative group shadow-lg project-card reveal" data-category="web">
-      <img src="assets/UI Personal WEB/Contact Page.png" alt="Real-Time Chat App" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
+      <img src="assets/Projects/Web Dev/Real‑Time Chat App.webp" alt="Real-Time Chat App" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6">
         <div>
           <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">Real‑Time Chat App</h3>
@@ -155,7 +177,7 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
     </div>
     <!-- Mobile Development -->
     <div class="bg-[#23242a] rounded-2xl overflow-hidden relative group shadow-lg project-card reveal" data-category="mobile">
-      <img src="assets/UI Personal WEB/About Page.png" alt="Expense Tracker App" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
+      <img src="assets/Projects/Mobile Dev/Expense Tracker App.png" alt="Expense Tracker App" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6">
         <div>
           <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">Expense Tracker App</h3>
@@ -168,7 +190,7 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
       </div>
     </div>
     <div class="bg-[#23242a] rounded-2xl overflow-hidden relative group shadow-lg project-card reveal" data-category="mobile">
-      <img src="assets/landing page/Samurai.jpg" alt="Location-Based Reminder" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
+      <img src="assets/Projects/Mobile Dev/Location‑Based Reminder.webp" alt="Location-Based Reminder" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6">
         <div>
           <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">Location‑Based Reminder</h3>
@@ -181,7 +203,7 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
       </div>
     </div>
     <div class="bg-[#23242a] rounded-2xl overflow-hidden relative group shadow-lg project-card reveal" data-category="mobile">
-      <img src="assets/UI Personal WEB/Resume Page.png" alt="Social Workout Companion" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
+      <img src="assets/Projects/Mobile Dev/Social Workout Companion.png" alt="Social Workout Companion" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6">
         <div>
           <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">Social Workout Companion</h3>
@@ -195,7 +217,7 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
     </div>
     <!-- UI Design -->
     <div class="bg-[#23242a] rounded-2xl overflow-hidden relative group shadow-lg project-card reveal" data-category="ui">
-      <img src="assets/UI Personal WEB/Portfolio Page.png" alt="Admin Dashboard Redesign" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
+      <img src="assets/Projects/UI Design/Admin Dashboard Redesign.png" alt="Admin Dashboard Redesign" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6">
         <div>
           <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">Admin Dashboard Redesign</h3>
@@ -208,7 +230,7 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
       </div>
     </div>
     <div class="bg-[#23242a] rounded-2xl overflow-hidden relative group shadow-lg project-card reveal" data-category="ui">
-      <img src="assets/UI Personal WEB/About Page.png" alt="Mobile Banking App UI Kit" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
+      <img src="assets/Projects/UI Design/Mobile Banking App UI Kit.png" alt="Mobile Banking App UI Kit" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6">
         <div>
           <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">Mobile Banking App UI Kit</h3>
@@ -221,7 +243,7 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
       </div>
     </div>
     <div class="bg-[#23242a] rounded-2xl overflow-hidden relative group shadow-lg project-card reveal" data-category="ui">
-      <img src="assets/hero photos/Dreino.jpg" alt="Smart Home Controller Interface" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
+      <img src="assets/Projects/UI Design/Smart Home Controller Interface.png" alt="Smart Home Controller Interface" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6">
         <div>
           <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">Smart Home Controller Interface</h3>
@@ -235,7 +257,7 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
     </div>
     <!-- Others -->
     <div class="bg-[#23242a] rounded-2xl overflow-hidden relative group shadow-lg project-card reveal" data-category="others">
-      <img src="assets/hero photos/Dreino2.jpg" alt="Brand Identity for a Startup" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
+      <img src="assets/Projects/UI Design/Brand Identity for a Startup.jpg" alt="Brand Identity for a Startup" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6">
         <div>
           <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">Brand Identity for a Startup</h3>
@@ -248,7 +270,7 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
       </div>
     </div>
     <div class="bg-[#23242a] rounded-2xl overflow-hidden relative group shadow-lg project-card reveal" data-category="others">
-      <img src="assets/hero photos/Dreino hero.jpg" alt="Event Poster Series" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
+      <img src="assets/Projects/UI Design/Event Poster Series.jpg" alt="Event Poster Series" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6">
         <div>
           <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">Event Poster Series</h3>
@@ -261,7 +283,7 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
       </div>
     </div>
     <div class="bg-[#23242a] rounded-2xl overflow-hidden relative group shadow-lg project-card reveal" data-category="others">
-      <img src="assets/UI Personal WEB/About Page.png" alt="Social Media Campaign Graphics" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
+      <img src="assets/Projects/UI Design/Social Media Campaign Graphics.jpg" alt="Social Media Campaign Graphics" class="object-cover w-full h-48 sm:h-64 transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6">
         <div>
           <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">Social Media Campaign Graphics</h3>
