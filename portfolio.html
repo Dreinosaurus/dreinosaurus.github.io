@@ -421,6 +421,20 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
             </div>
           </div>
         </div>
+        <div class="swiper-slide">
+          <div class="bg-white rounded-2xl shadow-2xl w-[280px] sm:w-[340px] md:w-[370px] flex flex-col overflow-hidden mx-auto h-[280px] sm:h-[340px] md:h-[370px]">
+            <div class="relative">
+              <img src="assets/Certificates/AI Empowerment for Communities Workshop Certificate.png" alt="AI Empowerment for Communities Workshop Certificate" class="w-full h-32 sm:h-40 object-contain rounded-t-2xl bg-white flex items-center justify-center mx-auto p-2">
+              <span class="absolute top-2 sm:top-3 right-2 sm:right-3 bg-white border border-gray-200 text-xs text-[#7b6cf6] font-bold px-2 sm:px-3 py-1 rounded-full shadow">AI/Community</span>
+            </div>
+            <div class="flex-1 flex flex-col px-4 sm:px-6 py-3 sm:py-4">
+              <h3 class="font-bold text-base sm:text-lg text-gray-900 mb-1">AI Empowerment for Communities</h3>
+              <div class="text-xs text-[#7b6cf6] font-semibold mb-2">Workshop Certificate</div>
+              <p class="text-gray-500 text-xs sm:text-sm mb-3 sm:mb-4 flex-1">Participated in a workshop focused on leveraging AI for community empowerment and innovation.</p>
+              <button class="mt-auto mb-2 bg-[#7b6cf6] hover:bg-[#6d5be4] text-white font-semibold py-1.5 sm:py-2 rounded-full shadow text-xs sm:text-sm transition ai-certificate-btn">Learn More</button>
+            </div>
+          </div>
+        </div>
       </div>
       <!-- Navigation Arrows -->
       <div class="swiper-button-prev !left-0 !w-8 !h-8 sm:!w-10 sm:!h-10 !flex !items-center !justify-center !bg-white !rounded-full !shadow-lg !z-10">
@@ -481,10 +495,16 @@ body { background: #15171c; color: #fff; font-family: 'Inter', sans-serif; }
       },
     });
   </script>
-  
   <script>
     // Modal logic for certificate Learn More buttons (event delegation for Swiper)
     document.querySelector('.certificates-swiper').addEventListener('click', function(e) {
+      // AI Certificate: open PDF in new tab
+      const aiBtn = e.target.closest('button.ai-certificate-btn');
+      if (aiBtn && e.target.closest('.swiper-slide')) {
+        window.open('assets/Certificates/AI Empowerment for Communities Workshop Certificate.pdf', '_blank');
+        return;
+      }
+      // Default: open modal for other certs
       if (e.target.closest('button') && e.target.closest('.swiper-slide')) {
         e.preventDefault();
         document.getElementById('cert-modal').classList.remove('hidden');
